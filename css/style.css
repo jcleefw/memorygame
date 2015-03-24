@@ -12,7 +12,6 @@ body {
   margin: 0 auto;
   font-size: 16px;
   font-family: Arial, sans-serif;
-  cursor: pointer;
 }
 
 /* line 14, sass/style.scss */
@@ -28,15 +27,27 @@ main {
   margin: 10px;
 }
 
-/* line 23, sass/style.scss */
+/* line 24, sass/style.scss */
+.row {
+  height: 150px;
+}
+
+/* line 27, sass/style.scss */
 .card {
+  cursor: pointer;
   border: 1px dashed #aaa;
-  height: 40%;
   width: 20%;
+  height: 100%;
   text-align: center;
   font-size: 3em;
-  line-height: 1.5em;
+  line-height: 2.5em;
   padding: 10px;
   display: inline-block;
   margin: 2%;
+  opacity: 1;
+}
+
+/* line 41, sass/style.scss */
+.hide {
+  opacity: 0;
 }
