@@ -1,0 +1,42 @@
+/* line 1, sass/style.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 6, sass/style.scss */
+body {
+  width: 900px;
+  max-height: 100%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+/* line 14, sass/style.scss */
+header {
+  width: 100%;
+  background: #42edca;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* line 20, sass/style.scss */
+main {
+  margin: 10px;
+}
+
+/* line 23, sass/style.scss */
+.card {
+  border: 1px dashed #aaa;
+  height: 40%;
+  width: 20%;
+  text-align: center;
+  font-size: 3em;
+  line-height: 1.5em;
+  padding: 10px;
+  display: inline-block;
+  margin: 2%;
+}
