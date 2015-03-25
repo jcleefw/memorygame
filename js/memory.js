@@ -19,6 +19,7 @@ var game = {
   },
   // Setup the screen with the card deck
   setUpDisplay: function() {
+    $('div.winner').hide();
     var gameArray = this.setUpGameArray();
 
     var length = gameArray.length;
@@ -108,7 +109,7 @@ var game = {
         winner = "Draw. No one wins";
       }
       $('div.cardArea').hide();
-      $('div.winner').prepend($('<p class="winner">').text(winner));
+      $('div.winner').prepend($('<p class="winner">').text(winner)).show();
       return true;
     } else {
       return false;
@@ -117,9 +118,24 @@ var game = {
   }
 }
 
+var player = {
+
+}
+
+var intro = {
+  init: function () {
+
+  }
+}
+
 $( document ).ready(function() {
     console.log( "ready!" );
+    intro.init();
     game.setUpDisplay();
+    $('#startPlay').on('click', function() {
+      $('#intro').fadeOut();
+      $('.gameArea').delay(600).fadeIn();
+    });
 
     $('.card').on('click', 'p', function() {
       //console.log($(this).parent().index());

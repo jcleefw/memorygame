@@ -1,0 +1,46 @@
+/* CSS for intro page */
+/* line 3, sass/intro.scss */
+#intro {
+  background: url("../img/bg.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 500px;
+  margin: auto;
+  position: relative;
+}
+
+/* line 13, sass/intro.scss */
+span.icon-play3 {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: 5em;
+  border: 3px solid white;
+  border-radius: 2.5em;
+  padding: 15px 10px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiNmZmU0NzEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGI1MDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(25%, #ffe471), color-stop(100%, #fdb500));
+  background-image: -moz-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: -webkit-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: linear-gradient(to bottom, #ffe471 25%, #fdb500 100%);
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px;
+}
+/* line 27, sass/intro.scss */
+span.icon-play3:active {
+  top: 41%;
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px, rgba(255, 228, 113, 0.3) 0 0 2px 30px, rgba(0, 0, 0, 0.2) 0 0 10px 5px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px, rgba(255, 228, 113, 0.3) 0 0 2px 30px, rgba(0, 0, 0, 0.2) 0 0 10px 5px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px, rgba(255, 228, 113, 0.3) 0 0 2px 30px, rgba(0, 0, 0, 0.2) 0 0 10px 5px;
+}
+
+/* line 32, sass/intro.scss */
+.icon-play3:before {
+  padding-left: 10px;
+  border-radius: 5px;
+}

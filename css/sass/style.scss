@@ -19,15 +19,16 @@ header{
 }
 main {
   margin: 10px;
-}
 
-.row {
-  height: 150px;
 }
+.gameArea, .winner{
+  display:none;
+}
+/* CSS for cards */
 .card {
   cursor: pointer;
   border: 1px dashed #aaa;
-  width: 20%;
+  width: 21%;
   height: 100%;
   text-align:center;
   font-size: 3em;

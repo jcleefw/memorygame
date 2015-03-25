@@ -3,19 +3,31 @@
 <head>
   <title>Memory Card</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="http://i.icomoon.io/public/temp/64bb667843/UntitledProject/style.css">
 </head>
 <body>
-  <header>
-    <h1>Memory Game</h1>
-    <div class="turn">Player <span id="playerTurn"></span> turn</div>
-    <div class="playerScore">
-      <p>Player 1: <span id="player1">0 </span></p>
-      <p>Player 2: <span id="player2">0</span></p>
-    </div>
-  </header>
+
   <main class="container">
-    <div class="cardArea">
+    <div class="fullscreen" id="intro">
+      <span class="icon-play3" id="startPlay"></span>
     </div>
+    <div class="gameArea">
+      <header>
+        <h1>Memory Game</h1>
+        <div class="turn">Player <span id="playerTurn"></span> turn</div>
+        <div class="playerScore">
+          <p>Player 1: <span id="player1">0 </span></p>
+          <p>Player 2: <span id="player2">0</span></p>
+        </div>
+        <div class="headerButtons">
+          <span class="icon-spinner11"></span>
+          <span class="icon-pause2"></span>
+        </div>
+      </header>
+      <div class="cardArea"></div>
+    </div>
+    
     <div class="winner"><button>Play Again</button></div>
   </main>
   <footer>

@@ -1,0 +1,35 @@
+@import "compass/css3/";
+/* CSS for intro page */
+#intro {
+  background: url('../img/bg.jpg') no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 500px;
+  margin:auto;
+  position: relative;
+}
+
+
+span.icon-play3 {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: 5em;
+  //background: #fde001;
+  border: 3px solid white;
+  border-radius: 2.5em;
+  padding: 15px 10px;
+  text-align: center;
+  color: white;
+  cursor:pointer;
+  @include background-image(linear-gradient(to bottom, #ffe471 25%, #fdb500 100%));
+  @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 5px 15px);
+  &:active{
+    top: 41%;
+    @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 5px 15px, rgba(#ffe471, 0.3) 0 0 2px 30px, rgba(#000, 0.2) 0 0 10px 5px);
+  }
+}
+.icon-play3:before {
+  padding-left:10px;
+  border-radius: 5px;
+}
