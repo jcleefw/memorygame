@@ -36,8 +36,12 @@ main {
   display: inline-block;
   margin: 2%;
   opacity:1;
+  p{
+    transition: all 1s linear;
+  }
 }
 
 .hide{
   opacity:0;
+  transition: all 2s linear;
 }

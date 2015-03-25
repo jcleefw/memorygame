@@ -46,8 +46,13 @@ main {
   margin: 2%;
   opacity: 1;
 }
+/* line 39, sass/style.scss */
+.card p {
+  transition: all 1s linear;
+}
 
-/* line 41, sass/style.scss */
+/* line 44, sass/style.scss */
 .hide {
   opacity: 0;
+  transition: all 2s linear;
 }
