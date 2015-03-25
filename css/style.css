@@ -1,59 +1,163 @@
-/* line 1, sass/style.scss */
+@font-face {
+  font-family: 'Angry Bird';
+  src: local("Angry Bird"), url("fonts/angrybirds-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 10, sass/style.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* line 6, sass/style.scss */
+/* line 15, sass/style.scss */
 body {
   width: 900px;
   max-height: 100%;
   margin: 0 auto;
   font-size: 16px;
-  font-family: Arial, sans-serif;
+  font-family: 'Angry Bird', Arial, sans-serif;
 }
 
-/* line 14, sass/style.scss */
+/* line 23, sass/style.scss */
 header {
   width: 100%;
-  background: #42edca;
-  padding: 10px 0;
-  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  text-align: left;
+  color: white;
+}
+/* line 29, sass/style.scss */
+header h1 {
+  font-size: 4em;
+  text-shadow: rgba(255, 190, 0, 0.8) -3px -3px 0;
 }
 
-/* line 20, sass/style.scss */
+/* line 34, sass/style.scss */
 main {
   margin: 10px;
 }
 
-/* line 24, sass/style.scss */
+/* line 38, sass/style.scss */
 .gameArea, .winner {
   display: none;
 }
 
+/* line 41, sass/style.scss */
+.gameArea {
+  background: url("../img/gamedeck-bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+/* line 46, sass/style.scss */
+.headerDiv {
+  display: inline-block;
+  text-shadow: rgba(255, 190, 0, 0.5) 1px 1px 0;
+}
+
+/* line 50, sass/style.scss */
+.playerInfo {
+  width: 70%;
+  text-align: right;
+  font-size: 1.5em;
+}
+/* line 54, sass/style.scss */
+.playerInfo p {
+  display: inline-block;
+  margin-left: 20px;
+}
+/* line 58, sass/style.scss */
+.playerInfo span {
+  color: #F2260E;
+  font-size: 2em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 2px;
+}
+
+/* line 64, sass/style.scss */
+.headerButtons {
+  width: 29%;
+  text-align: left;
+}
+/* line 67, sass/style.scss */
+.headerButtons span {
+  font-size: 2em;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 1em;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiNmZmU0NzEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGI1MDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(25%, #ffe471), color-stop(100%, #fdb500));
+  background-image: -moz-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: -webkit-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: linear-gradient(to bottom, #ffe471 25%, #fdb500 100%);
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+}
+
 /* CSS for cards */
-/* line 28, sass/style.scss */
+/* line 77, sass/style.scss */
 .card {
   cursor: pointer;
   border: 1px dashed #aaa;
   width: 21%;
-  height: 100%;
+  height: 140px;
   text-align: center;
   font-size: 3em;
   line-height: 2.5em;
   padding: 10px;
   display: inline-block;
   margin: 2%;
-  opacity: 1;
-}
-/* line 40, sass/style.scss */
-.card p {
-  transition: all 1s linear;
+  background: white;
+  border-radius: 10px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
-/* line 45, sass/style.scss */
-.hide {
-  opacity: 0;
-  transition: all 2s linear;
+/* line 94, sass/style.scss */
+.card.flipped {
+  -webkit-transform: rotatex(-180deg);
+}
+
+/* line 98, sass/style.scss */
+.face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+/* line 106, sass/style.scss */
+.back, .front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  color: black;
+  border: 1px dashed #aaa;
+  border-radius: 10px;
+}
+
+/* line 116, sass/style.scss */
+.front {
+  z-index: 1;
+  background: url("../img/card-bg.jpg") no-repeat center;
+  background-size: 100%;
+}
+
+/* line 122, sass/style.scss */
+.back {
+  -moz-transform: rotatex(-180deg);
+  -ms-transform: rotatex(-180deg);
+  -webkit-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
 }

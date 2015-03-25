@@ -1,12 +1,11 @@
 // create a temp array to hold variety of symbols for game
 var tempArray = ["@","$","%","&","*","#","+","="];
+
 var game = {
   pairs: 4, // 4 x 2 = 8 cards
   clickValue: [],
   clickIndex: [],
   pairsFound: 0,
-  player1: 0,
-  player2: 0,
   playerTurn: 0,
   setUpGameArray: function() {
     // select the number of symbols needed for the game
@@ -26,10 +25,13 @@ var game = {
     
     var counter=0;
     $('.cardArea').append('<ul>');
+
+    var $frontDiv = $('<div>').addClass('face front');
+    var $backDiv = $('<div>').addClass('face back');
     // loop through the number of cards for the game and add element to html
     _.times((game.pairs*2), function(index) {
-      //console.log(gameArray[counter]);
-      $('ul').append($('<li class="card">').append($('<p class="hide">').text(gameArray[counter])));
+      
+      $('ul').append($('<li class="card"><div class="face front">').append($('<div class="face back">').text(gameArray[counter])));
       counter++;
     });
 
@@ -58,7 +60,7 @@ var game = {
         this.updatePlayerScore(this.playerTurn);
       }
 
-      // then clear bothe value and index array
+      // then clear both value and index array
       this.clickValue = [];
       this.clickIndex = [];
       return true;
@@ -77,8 +79,9 @@ var game = {
   },
   hideCards: function() {
     var indexToChange = this.clickIndex; 
+
     _.times(indexToChange.length, function(index) {
-      $( 'ul li:nth-child('+(indexToChange[index]+1)+') p' ).toggleClass('hide');
+      $( 'ul li:nth-child('+(indexToChange[index]+1)+')' ).removeClass('flipped');
     });
     $('#playerTurn').text(this.changePlayer()+1);
     
@@ -86,13 +89,14 @@ var game = {
   changePlayer:function() {
     return (this.playerTurn) ? this.playerTurn = 0 : this.playerTurn = 1;
   },
-  updatePlayerScore: function(player) {
-    if(!player) {
-      this.player1++;
-      $('#player1').text(this.player1);
+  updatePlayerScore: function(playerTurn) {
+    console.log(player.player1.score);
+    if(!playerTurn) {
+      player.player1.score++;
+      $('#player1').text(player.player1.score);
     }else {
-      this.player2++;
-      $('#player2').text(this.player2);
+      player.player2.score++;
+      $('#player2').text(player.player2.score);
     }
     this.pairsFound += 1;
     this.checkWin();
@@ -100,31 +104,12 @@ var game = {
   checkWin: function () {
     console.log("pairsFound=" + this.pairsFound);
     var winner;
-    if(this.pairsFound===4) {
-      if(this.player1 > this.player2) {
-        winner = "Player 1 wins" ;
-      } else if (this.player2 > this.player1) {
-        winner = "Player 2 wins";
-      }else {
-        winner = "Draw. No one wins";
-      }
-      $('div.cardArea').hide();
-      $('div.winner').prepend($('<p class="winner">').text(winner)).show();
+    if(this.pairsFound===this.pairs) {
+      player.displayWinner();
       return true;
     } else {
       return false;
     }
-    
-  }
-}
-
-var player = {
-
-}
-
-var intro = {
-  init: function () {
-
   }
 }
 
@@ -133,23 +118,26 @@ $( document ).ready(function() {
     intro.init();
     game.setUpDisplay();
     $('#startPlay').on('click', function() {
-      $('#intro').fadeOut();
+      $('#intro').fadeOut().remove();
       $('.gameArea').delay(600).fadeIn();
     });
 
-    $('.card').on('click', 'p', function() {
+    $('.card').on('click', function() {
       //console.log($(this).parent().index());
-      var liIndex = $(this).parent().index();
+      var liIndex = $(this).index();
       var elem = $(this);
-      $(this).toggleClass('hide');
+      $(this).addClass('flipped');
       _.delay(function() {
         //console.log(elem);
         game.storeClickValue(elem.html(), liIndex)
       },600);
     });
+    
+    restart button
     $('button').on('click', function() {
       $('div.cardArea').empty().show();
       game.setUpDisplay();
       //$('div.cardArea').show();
     });
+
 });
