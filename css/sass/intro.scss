@@ -5,20 +5,24 @@
   background-size: cover;
   width: 100%;
   min-height: 500px;
-  margin:auto;
   position: relative;
+  text-align:center;
+  padding-top: 350px;
+  button {
+    position: relative;
+    margin: 20px;
+  }
 }
 
 
-span.icon-play3 {
+i.icon-play {
   position: absolute;
   top: 40%;
   left: 45%;
   font-size: 5em;
-  //background: #fde001;
+  font-style: normal;
   border: 3px solid white;
   border-radius: 2.5em;
-  padding: 15px 10px;
   text-align: center;
   color: white;
   cursor:pointer;
@@ -29,7 +33,7 @@ span.icon-play3 {
     @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 5px 15px, rgba(#ffe471, 0.3) 0 0 2px 30px, rgba(#000, 0.2) 0 0 10px 5px);
   }
 }
-.icon-play3:before {
-  padding-left:10px;
-  border-radius: 5px;
+i.icon-play:before {
+  content: '\e800';
+  padding: 0 20px;
 }

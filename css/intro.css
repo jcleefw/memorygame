@@ -5,19 +5,25 @@
   background-size: cover;
   width: 100%;
   min-height: 500px;
-  margin: auto;
   position: relative;
+  text-align: center;
+  padding-top: 350px;
+}
+/* line 11, sass/intro.scss */
+#intro button {
+  position: relative;
+  margin: 20px;
 }
 
-/* line 13, sass/intro.scss */
-span.icon-play3 {
+/* line 18, sass/intro.scss */
+i.icon-play {
   position: absolute;
   top: 40%;
   left: 45%;
   font-size: 5em;
+  font-style: normal;
   border: 3px solid white;
   border-radius: 2.5em;
-  padding: 15px 10px;
   text-align: center;
   color: white;
   cursor: pointer;
@@ -31,16 +37,16 @@ span.icon-play3 {
   -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px;
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px;
 }
-/* line 27, sass/intro.scss */
-span.icon-play3:active {
+/* line 31, sass/intro.scss */
+i.icon-play:active {
   top: 41%;
   -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px, rgba(255, 228, 113, 0.3) 0 0 2px 30px, rgba(0, 0, 0, 0.2) 0 0 10px 5px;
   -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px, rgba(255, 228, 113, 0.3) 0 0 2px 30px, rgba(0, 0, 0, 0.2) 0 0 10px 5px;
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 5px 15px, rgba(255, 228, 113, 0.3) 0 0 2px 30px, rgba(0, 0, 0, 0.2) 0 0 10px 5px;
 }
 
-/* line 32, sass/intro.scss */
-.icon-play3:before {
-  padding-left: 10px;
-  border-radius: 5px;
+/* line 36, sass/intro.scss */
+i.icon-play:before {
+  content: '\e800';
+  padding: 0 20px;
 }

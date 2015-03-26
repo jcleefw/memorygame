@@ -37,6 +37,7 @@ var game = {
       $('ul').append(listItem);
       counter++;
     });
+    this.setUpEventListener();
 
     // Display which player's turn
     $('#playerTurn').text(this.playerTurn+1);
@@ -60,7 +61,7 @@ var game = {
       
       // else update player score  
       } else {
-        this.updatePlayerScore(this.playerTurn);
+        this.updatePlayerScore(false, this.playerTurn);
       }
 
       // then clear both value and index array
@@ -92,17 +93,29 @@ var game = {
   changePlayer:function() {
     return (this.playerTurn) ? this.playerTurn = 0 : this.playerTurn = 1;
   },
-  updatePlayerScore: function(playerTurn) {
+  updatePlayerScore: function(reset, playerTurn ) {
     console.log(player.player1.score);
-    if(!playerTurn) {
-      player.player1.score++;
+
+    if(reset === true) {
+      player.player1.score = 0;
+      player.player2.score = 0;
       $('#player1').text(player.player1.score);
-    }else {
-      player.player2.score++;
       $('#player2').text(player.player2.score);
+    } else {
+      console.log('this is not reset');
+      if(!playerTurn) {
+        console.log('player 1 scores');
+        player.player1.score++;
+        $('#player1').text(player.player1.score);
+      }else {
+        console.log('player 2 scores');
+        player.player2.score++;
+        $('#player2').text(player.player2.score);
+      }
+      this.pairsFound += 1;
+      this.checkWin();
     }
-    this.pairsFound += 1;
-    this.checkWin();
+    
   },
   checkWin: function () {
     console.log("pairsFound=" + this.pairsFound);
@@ -113,18 +126,8 @@ var game = {
     } else {
       return false;
     }
-  }
-}
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-    intro.init();
-    game.setUpDisplay();
-    $('#startPlay').on('click', function() {
-      $('#intro').fadeOut().remove();
-      $('.gameArea').delay(600).fadeIn();
-    });
-
+  },
+  setUpEventListener: function() {
     $('.card').on('click', function() {
       //console.log($(this).parent().index());
       var liIndex = $(this).index();
@@ -135,12 +138,26 @@ $( document ).ready(function() {
         game.storeClickValue(elem.html(), liIndex)
       },600);
     });
-
-    //restart button
-    $('button').on('click', function() {
-      $('div.cardArea').empty().show();
-      game.setUpDisplay();
-      //$('div.cardArea').show();
+    $('span.icon-spinner11').on('click', function() {
+      console.log("Restart was hit.");
+      $('.cardArea').fadeOut().empty().delay(700).fadeIn();
+      game.restartGame();
     });
+  },
+  restartGame: function() {
+    
+    this.playerTurn = 0;
+    game.updatePlayerScore(true);
+    game.setUpDisplay().fadeIn();
+  }
+}
 
+$( document ).ready(function() {
+    console.log( "ready!" );
+    intro.init();
+    //game.setUpDisplay();
+    $('#startPlay').on('click', function() {
+      $('#intro').fadeOut().remove();
+      $('.gameArea').delay(600).fadeIn();
+    });
 });

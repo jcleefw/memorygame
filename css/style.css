@@ -4,14 +4,20 @@
   font-weight: normal;
   font-style: normal;
 }
-/* line 10, sass/style.scss */
+@font-face {
+  font-family: 'fontello';
+  src: local("Fonttello"), url("fonts/fontello.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 15, sass/style.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* line 15, sass/style.scss */
+/* line 20, sass/style.scss */
 body {
   width: 900px;
   max-height: 100%;
@@ -20,7 +26,7 @@ body {
   font-family: 'Angry Bird', Arial, sans-serif;
 }
 
-/* line 23, sass/style.scss */
+/* line 28, sass/style.scss */
 header {
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -28,63 +34,71 @@ header {
   text-align: left;
   color: white;
 }
-/* line 29, sass/style.scss */
+/* line 34, sass/style.scss */
 header h1 {
   font-size: 4em;
   text-shadow: rgba(255, 190, 0, 0.8) -3px -3px 0;
 }
 
-/* line 34, sass/style.scss */
+/* line 39, sass/style.scss */
 main {
   margin: 10px;
 }
 
-/* line 38, sass/style.scss */
+/* line 44, sass/style.scss */
+.fullscreen {
+  min-height: 500px;
+}
+
+/* line 47, sass/style.scss */
 .gameArea, .winner {
   display: none;
 }
 
-/* line 41, sass/style.scss */
+/* line 50, sass/style.scss */
 .gameArea {
   background: url("../img/gamedeck-bg.jpg") no-repeat;
   background-size: cover;
+  min-height: 508px;
 }
 
-/* line 46, sass/style.scss */
+/* line 56, sass/style.scss */
 .headerDiv {
   display: inline-block;
   text-shadow: rgba(255, 190, 0, 0.5) 1px 1px 0;
 }
 
-/* line 50, sass/style.scss */
+/* line 60, sass/style.scss */
 .playerInfo {
   width: 70%;
   text-align: right;
   font-size: 1.5em;
 }
-/* line 54, sass/style.scss */
+/* line 64, sass/style.scss */
 .playerInfo p {
   display: inline-block;
   margin-left: 20px;
 }
-/* line 58, sass/style.scss */
+/* line 68, sass/style.scss */
 .playerInfo span {
   color: #F2260E;
   font-size: 2em;
   text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 2px;
 }
 
-/* line 64, sass/style.scss */
+/* line 74, sass/style.scss */
 .headerButtons {
   width: 29%;
   text-align: left;
+  position: relative;
 }
-/* line 67, sass/style.scss */
+/* line 78, sass/style.scss */
 .headerButtons span {
   font-size: 2em;
   padding: 10px;
   margin: 0 5px;
   border-radius: 1em;
+  display: inline-block;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiNmZmU0NzEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGI1MDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(25%, #ffe471), color-stop(100%, #fdb500));
@@ -95,9 +109,22 @@ main {
   -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
 }
+/* line 87, sass/style.scss */
+.headerButtons span:hover {
+  top: 3px;
+  position: relative;
+}
+/* line 91, sass/style.scss */
+.headerButtons span:active {
+  top: 3px;
+  position: relative;
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 5px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 5px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 5px;
+}
 
 /* CSS for cards */
-/* line 77, sass/style.scss */
+/* line 100, sass/style.scss */
 .card {
   cursor: pointer;
   border: 1px dashed #aaa;
@@ -120,12 +147,12 @@ main {
   transition-duration: 0.5s;
 }
 
-/* line 94, sass/style.scss */
+/* line 117, sass/style.scss */
 .card.flipped {
   -webkit-transform: rotatex(-180deg);
 }
 
-/* line 98, sass/style.scss */
+/* line 121, sass/style.scss */
 .face {
   width: 100%;
   height: 100%;
@@ -136,7 +163,7 @@ main {
   z-index: 2;
 }
 
-/* line 106, sass/style.scss */
+/* line 129, sass/style.scss */
 .back, .front {
   position: absolute;
   top: 0;
@@ -147,17 +174,115 @@ main {
   border-radius: 10px;
 }
 
-/* line 116, sass/style.scss */
+/* line 139, sass/style.scss */
 .front {
   z-index: 1;
   background: url("../img/card-bg.jpg") no-repeat center;
   background-size: 100%;
 }
 
-/* line 122, sass/style.scss */
+/* line 145, sass/style.scss */
 .back {
   -moz-transform: rotatex(-180deg);
   -ms-transform: rotatex(-180deg);
   -webkit-transform: rotatex(-180deg);
   transform: rotatex(-180deg);
+}
+
+/* User Customization <div class="fullscreen" id="userCustomization"> */
+/* line 149, sass/style.scss */
+#userCustomization {
+  background: url("../img/settings-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/* line 153, sass/style.scss */
+.playerName {
+  width: 50%;
+  display: inline-block;
+  height: inherit;
+  text-align: center;
+  margin: 10% 0 5% 0;
+}
+
+/* line 161, sass/style.scss */
+.playerContainer {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  margin: auto;
+  height: 200px;
+  display: block;
+  width: 80%;
+  border-radius: 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 5px;
+}
+/* line 170, sass/style.scss */
+.playerContainer label, .playerContainer input {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  padding: 20px;
+}
+/* line 176, sass/style.scss */
+.playerContainer input {
+  width: 100%;
+  font-family: inherit;
+  border-radius: 10px;
+  border: none;
+}
+/* line 181, sass/style.scss */
+.playerContainer input:focus {
+  outline: none;
+}
+
+/* line 186, sass/style.scss */
+.inputSubmit {
+  text-align: center;
+  display: block;
+}
+
+/* winner display*/
+/* icons set */
+/* line 200, sass/style.scss */
+i {
+  font-family: 'fontello';
+}
+
+/* line 204, sass/style.scss */
+button {
+  padding: 20px;
+  font-family: inherit;
+  font-size: 2em;
+  border: 5px solid white;
+  border-radius: 1em;
+  color: white;
+  position: relative;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiNmZmU0NzEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGI1MDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(25%, #ffe471), color-stop(100%, #fdb500));
+  background-image: -moz-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: -webkit-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: linear-gradient(to bottom, #ffe471 25%, #fdb500 100%);
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
+}
+/* line 215, sass/style.scss */
+button:active {
+  top: 3px;
+  left: 3px;
+}
+/* line 219, sass/style.scss */
+button:active {
+  color: rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
+}
+/* line 223, sass/style.scss */
+button:focus, button:active {
+  outline: none;
 }
