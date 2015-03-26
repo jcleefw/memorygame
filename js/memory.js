@@ -132,8 +132,8 @@ $( document ).ready(function() {
         game.storeClickValue(elem.html(), liIndex)
       },600);
     });
-    
-    restart button
+
+    //restart button
     $('button').on('click', function() {
       $('div.cardArea').empty().show();
       game.setUpDisplay();
