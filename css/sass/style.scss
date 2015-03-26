@@ -38,11 +38,14 @@ header{
 }
 main {
   margin: 10px;
-
 }
 
 .fullscreen{
   min-height: 500px;
+  button {
+    position: relative;
+    margin: 20px;
+  }
 }
 .gameArea, .winner{
   display:none;
@@ -53,6 +56,7 @@ main {
   min-height: 508px;
 }
 
+/* Header Settings */
 .headerDiv{
   display: inline-block;
    @include text-shadow(rgba(#ffbe00, 0.5) 1px 1px 0);
@@ -75,26 +79,34 @@ main {
   width: 29%;
   text-align: left;
   position: relative;
-  span {
-    font-size: 2em;
-    padding: 10px;
-    margin: 0 5px;
-    border-radius:1em;
-    //position: absolute;
-    display: inline-block;
-    @include background-image(linear-gradient(to bottom, #ffe471 25%, #fdb500 100%));
-    @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 2px 2px);
-    &:hover {
-      top:3px;
-      position: relative;
-    }
-    &:active {
-      top:3px;
-      position: relative;
-       @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 2px 5px);
-    }
+}
+i {
+  font-size: 2em;
+  margin: 0 5px;
+  border-radius:1em;
+  font-style:normal;
+  display: inline-block;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  @include background-image(linear-gradient(to bottom, #ffe471 25%, #fdb500 100%));
+  @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 2px 2px);
+  &:hover {
+    top:3px;
+    position: relative;
   }
-
+  &:active {
+    top:3px;
+    position: relative;
+     @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 2px 5px);
+  }
+}
+.icon-cw:before {
+  content: '\e801';
+}
+.icon-pause:before {
+  content: '\e802';
 }
 /* CSS for cards */
 .card {
@@ -149,6 +161,7 @@ main {
 #userCustomization {
   background: url('../img/settings-bg.jpg') no-repeat center;
   background-size: cover;
+  display:none;
 }
 .playerName {
   width: 50%;

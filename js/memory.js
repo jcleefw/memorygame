@@ -155,9 +155,5 @@ var game = {
 $( document ).ready(function() {
     console.log( "ready!" );
     intro.init();
-    //game.setUpDisplay();
-    $('#startPlay').on('click', function() {
-      $('#intro').fadeOut().remove();
-      $('.gameArea').delay(600).fadeIn();
-    });
+    
 });
