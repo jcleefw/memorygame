@@ -9,3 +9,17 @@
   text-align: center;
   padding-top: 350px;
 }
+
+/* line 13, sass/intro.scss */
+.winner {
+  background: rgba(255, 255, 255, 0.5);
+  display: block;
+  text-align: center;
+  padding: 16% 0;
+}
+
+/* line 19, sass/intro.scss */
+.message {
+  font-size: 3em;
+  padding-bottom: 20px;
+}

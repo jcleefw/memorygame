@@ -56,7 +56,7 @@ main {
 }
 
 /* line 50, sass/style.scss */
-.gameArea, .winner {
+.gameArea {
   display: none;
 }
 
@@ -265,14 +265,13 @@ i:active {
   display: block;
 }
 
-/* winner display*/
 /* icons set */
-/* line 213, sass/style.scss */
+/* line 206, sass/style.scss */
 i {
   font-family: 'fontello';
 }
 
-/* line 217, sass/style.scss */
+/* line 210, sass/style.scss */
 button {
   padding: 20px;
   font-family: inherit;
@@ -292,19 +291,19 @@ button {
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
   text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
 }
-/* line 228, sass/style.scss */
+/* line 221, sass/style.scss */
 button:active {
   top: 3px;
   left: 3px;
 }
-/* line 232, sass/style.scss */
+/* line 225, sass/style.scss */
 button:active {
   color: rgba(0, 0, 0, 0.5);
   -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
   -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
 }
-/* line 236, sass/style.scss */
+/* line 229, sass/style.scss */
 button:focus, button:active {
   outline: none;
 }

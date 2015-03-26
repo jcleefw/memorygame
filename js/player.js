@@ -2,15 +2,20 @@ var player = {
   //player1: { name: '', score: 0, totalRoundWin: 0 },
   //player2: { name: '', score: 0, totalRoundWin: 0 },
   displayWinner: function() {
-    if(player.player1.score > player.player2.score) {
-      winner = "Player 1 wins" ;
-      this.player1.totalRoundWin++;
-    } else if (player.player2.score > player.player1.score) {
-      winner = "Player 2 wins";
-      this.player2.totalRoundWin++;
-    }else {
-      winner = "Draw. No one wins";
+    if(game.gameType !== 'single') {
+      if(player.player1.score > player.player2.score) {
+        winner = "Congratulations, " + this.player1.name + " wins" ;
+        this.player1.totalRoundWin++;
+      } else if (player.player2.score > player.player1.score) {
+        winner = "Congratulations, " + this.player2.name + " wins" ;
+        this.player2.totalRoundWin++;
+      }else {
+        winner = "Oh! Oh! Draw. No one wins";
+      }
+    } else {
+      winner = "Congratulations. You've finish the game";
     }
+    
 
     $('div.cardArea').hide();
     $('div.winner').prepend($('<p class="message">').text(winner)).show();
@@ -44,6 +49,8 @@ var player = {
       player.setDefaultPlayerName(1);
       player.setDefaultPlayerName(2);
     }
+
+    //return array.length;
   },
   setDefaultPlayerName: function(num) {
     return player["player"+num].name = "Player " + num;

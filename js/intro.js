@@ -16,14 +16,14 @@ var intro = {
         $(this).remove();
       });
       
-      game.setUpDisplay('single');
+      //game.setUpDisplay('single');
     });
     $('#doublePlayer').on('click', function() {
       $('#intro').fadeOut(1000, function() {
         player.createPlayer(2);
         $(this).remove();
       });
-      game.setUpDisplay('double');
+      //game.setUpDisplay('double');
     });
   }
 }
@@ -63,6 +63,9 @@ var settings = {
           playerName.push(name.val());
       });
       player.assignPlayerName(playerName, buttonClick);
+      console.log(playerName.length);  
+      (playerName.length>1) ? game.setUpDisplay('double') : game.setUpDisplay('single');
+      
       $(this).parent().fadeOut(1000, function() {
         $('.gameArea').fadeIn(600);
         $(this).remove();

@@ -47,7 +47,7 @@ main {
     margin: 20px;
   }
 }
-.gameArea, .winner{
+.gameArea{
   display:none;
 }
 .gameArea {
@@ -199,14 +199,7 @@ i {
 .inputSubmit {
   // width: 100%;
   text-align: center;
-  
   display: block;
-  
-}
-
-/* winner display*/
-.winner {
-
 }
 
 /* icons set */
