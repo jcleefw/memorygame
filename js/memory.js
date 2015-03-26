@@ -26,12 +26,15 @@ var game = {
     var counter=0;
     $('.cardArea').append('<ul>');
 
-    var $frontDiv = $('<div>').addClass('face front');
-    var $backDiv = $('<div>').addClass('face back');
+    
     // loop through the number of cards for the game and add element to html
     _.times((game.pairs*2), function(index) {
-      
-      $('ul').append($('<li class="card"><div class="face front">').append($('<div class="face back">').text(gameArray[counter])));
+      var $frontDiv = $('<div>').addClass('face front');
+      var $backDiv = $('<div>').addClass('face back').text(gameArray[counter]);
+      var listItem = $('<li>').addClass('card').append($frontDiv).append($backDiv);
+
+      //$('ul').append($('<li class="card"><div class="face front">').append($('<div class="face back">').text(gameArray[counter])));
+      $('ul').append(listItem);
       counter++;
     });
 
