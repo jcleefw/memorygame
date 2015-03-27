@@ -13,7 +13,7 @@
 /* line 13, sass/intro.scss */
 .winner {
   background: rgba(255, 255, 255, 0.5);
-  display: block;
+  display: none;
   text-align: center;
   padding: 16% 0;
 }
@@ -22,4 +22,29 @@
 .message {
   font-size: 3em;
   padding-bottom: 20px;
+}
+
+/* line 26, sass/intro.scss */
+input[type=range] {
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  /* Specific width is required for Firefox. */
+}
+/* line 30, sass/intro.scss */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+/* line 33, sass/intro.scss */
+input[type=range]:focus {
+  outline: none;
+}
+/* line 36, sass/intro.scss */
+input[type=range]::ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  /* Hides the slider so custom styles can be added */
+  border-color: transparent;
+  color: transparent;
 }

@@ -30,15 +30,11 @@ var intro = {
 
 var settings = {
   init: function(num) {
-    $buttonStart = $('<button>').attr('id', 'startPlay').text('Start');
-    $buttonSkip = $('<button>').attr('id', 'skip').text('Skip');
-    $settingsDiv = $('<div>').addClass('fullscreen').attr('id', 'userCustomization');
-
-    $('main.container').prepend($settingsDiv.fadeIn(600));
+    $('#userCustomization').fadeIn(600);
     _.times(num, function(index) {
       settings.createPlayerNameDiv((index+1));
     });
-    $('#userCustomization').append($buttonStart).append($buttonSkip);
+    
     this.createEventListener();
   },
   createPlayerNameDiv: function (index) {
@@ -48,7 +44,7 @@ var settings = {
     
     $container = $('<p>').addClass('playerContainer').append($label).append($input);
     $playerNameDiv = $('<div>').addClass('playerName').append($container);
-    $('#userCustomization').append($playerNameDiv);
+    $('#userCustomization').prepend($playerNameDiv);
   },
   createEventListener: function() {
     $('#userCustomization').on('click', 'button', function() {
@@ -70,7 +66,13 @@ var settings = {
         $('.gameArea').fadeIn(600);
         $(this).remove();
       });
-      
     });
+
+    // $("#cardRange").change(function () {         
+    //   console.log("Card Range is changing");
+    //   var newValue = $('#cardRange').val();
+    //   console.log("newValue =" + newValue);
+    //   $("#cardsNo").text(newValue);
+    // });
   }
 }

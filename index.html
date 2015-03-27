@@ -9,9 +9,27 @@
 <body>
 
   <main class="container">
+    <div id="userCustomization" class="fullscreen">
+
+      <div class="clear"></div>
+      <!-- <div class="cardRange">
+        <label for="cardsPlayingLabel">Cards Playing:</label><span id="cardsNo">8</span><br>
+        <input id="cardRange" type="range" min="8" max="32" value="8" step="4">
+      </div> -->
+      
+      <button id="startPlay">Start</button>
+      <button id="skip">Skip</button>
+    </div>
     <div class="gameArea">
       <header> 
+
         <div class="headerButtons headerDiv">
+          <!-- stop watch feature  -->
+
+          <p>Duration: </p><div class="stopwatch">00:00:00</div>
+          
+          <!-- end of stop watch feature  -->
+
           <i class="icon-cw"></i>
           <i class="icon-pause"></i>
           <!-- <span class="icon-spinner11"></span>
@@ -41,5 +59,6 @@
   <script src="js/intro.js"></script>
   <script src="js/player.js"></script>
   <script src="js/memory.js"></script>
+  <script src="js/stopwatch.js"></script>
 </body>
 </html>

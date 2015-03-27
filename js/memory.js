@@ -49,7 +49,10 @@ var game = {
         $('#playerTurn').text(player.player2.name);
       }
     }
-    this.gameType = numOfPlayers;
+    if(!this.gameType) {
+      this.gameType = numOfPlayers;
+    }
+    
     
   },
   setHeaderDisplay: function(type) {
@@ -190,6 +193,7 @@ var game = {
   },
   setUpEventListener: function() {
     $('.card').on('click', function() {
+      Stopwatch.init();
       //console.log($(this).parent().index());
       var liIndex = $(this).index();
       var elem = $(this);
@@ -208,6 +212,10 @@ var game = {
     $('.winner').hide().empty();
     //game.pairsFound = 0;
     game.config();
+    
+    Stopwatch.stop();
+    Stopwatch.clear();
+    $('.stopwatch').text('00:00:00');
   }
 }
 
@@ -218,5 +226,9 @@ $( document ).ready(function() {
       console.log("Restart was hit.");
       $('.cardArea').fadeOut().empty().delay(700).fadeIn();;
       game.restartGame();
+    });
+    $('.icon-pause').on('click', function() {
+      console.log("Pause was hit.");
+      Stopwatch.stop();
     });
 });

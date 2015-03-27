@@ -12,7 +12,7 @@
 
 .winner {
   background: rgba(255,255,255, 0.5);
-  display:block;
+  display:none;
   text-align: center;
   padding: 16% 0;
 }
@@ -20,3 +20,27 @@
   font-size: 3em;
   padding-bottom: 20px;
 }
+
+
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  
+  &::-webkit-slider-thumb{
+    -webkit-appearance: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &::ms-track{
+    width: 100%;
+    cursor: pointer;
+    background: transparent; /* Hides the slider so custom styles can be added */
+    border-color: transparent;
+    color: transparent;
+  }
+}
+
+
+

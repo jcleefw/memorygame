@@ -19,6 +19,7 @@ var player = {
 
     $('div.cardArea').hide();
     $('div.winner').prepend($('<p class="message">').text(winner)).show();
+    Stopwatch.stop();
   },
   createPlayer: function(numPlayer) {
     console.log("Create " + numPlayer + " player(s)");

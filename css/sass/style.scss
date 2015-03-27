@@ -39,7 +39,9 @@ header{
 main {
   margin: 10px;
 }
-
+.clear{
+  clear:both;
+}
 .fullscreen{
   min-height: 500px;
   button {
@@ -200,6 +202,15 @@ i {
   // width: 100%;
   text-align: center;
   display: block;
+}
+.cardRange {
+  padding: 20px;
+  label, span{
+    font-size: 1.5em;
+  }
+  span{
+    padding: 0 10px;
+  }
 }
 
 /* icons set */
