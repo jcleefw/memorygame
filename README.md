@@ -34,6 +34,7 @@ Todo
 * Card numbers Customization
 * Change cards pairs from characters to angry bird image for matching
 * Add background music for game
+* Add in Local Storage Features
 
 
 Spec Built For
