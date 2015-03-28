@@ -2,8 +2,8 @@ var intro = {
   init: function () {
     $introDiv = $('<div>').addClass('fullscreen').attr('id', 'intro');
     //$introSpan = $('<i>').addClass("icon-play").attr('id', 'startPlay');
-    $singlePlayerButton = $('<button>').attr('id', 'singlePlayer').text('Single Player');
-    $doublePlayerButton = $('<button>').attr('id', 'doublePlayer').text('Double Player');
+    $singlePlayerButton = $('<button>').addClass('spreadButton').attr('id', 'singlePlayer').text('Single Player');
+    $doublePlayerButton = $('<button>').addClass('spreadButton').attr('id', 'doublePlayer').text('Double Player');
     $('main.container').prepend($introDiv);
     $('#intro').append($singlePlayerButton).append($doublePlayerButton);
 
@@ -44,7 +44,11 @@ var settings = {
     
     $container = $('<p>').addClass('playerContainer').append($label).append($input);
     $playerNameDiv = $('<div>').addClass('playerName').append($container);
-    $('#userCustomization').prepend($playerNameDiv);
+    if ($("div.playerName").length > 0){
+      $("div.playerName").append($playerNameDiv);
+    } else {
+      $('#userCustomization').prepend($playerNameDiv);
+    }
   },
   createEventListener: function() {
     $('#userCustomization').on('click', 'button', function() {
