@@ -45,7 +45,7 @@ var settings = {
     $container = $('<p>').addClass('playerContainer').append($label).append($input);
     $playerNameDiv = $('<div>').addClass('playerName').append($container);
     if ($("div.playerName").length > 0){
-      $("div.playerName").append($playerNameDiv);
+      $playerNameDiv.insertAfter($("div.playerName"));
     } else {
       $('#userCustomization').prepend($playerNameDiv);
     }
