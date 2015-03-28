@@ -212,9 +212,6 @@ var game = {
     $('.winner').hide().empty();
     //game.pairsFound = 0;
     game.config();
-    
-    Stopwatch.stop();
-    Stopwatch.clear();
     $('.stopwatch').text('00:00:00');
   }
 }

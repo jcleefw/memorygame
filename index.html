@@ -3,31 +3,44 @@
 <head>
   <title>Memory Card</title>
   <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/intro.css">
 </head>
 <body>
 
   <main class="container">
-    <div id="userCustomization" class="fullscreen">
-
-      <div class="clear"></div>
-      <!-- <div class="cardRange">
-        <label for="cardsPlayingLabel">Cards Playing:</label><span id="cardsNo">8</span><br>
-        <input id="cardRange" type="range" min="8" max="32" value="8" step="4">
-      </div> -->
+    <section class="fullscreen" id="intro">
+      <div class="introBg"></div>
+      <div class="introButton">
+        <button class="spreadButton" id="singlePlayer">Single Player</button>
+        <button class="spreadButton" id="doublePlayer">Double Player</button>
+      </div>
       
-      <button id="startPlay">Start</button>
-      <button id="skip">Skip</button>
-    </div>
-    <div class="gameArea">
+    </section>
+    <section id="userCustomization" class="fullscreen">
+      <div class="userSettings">
+        <div class="inputDiv">
+          <label for="difficulty">Difficulty:</label><span id="difficulty">Normal</span
+        </div>
+        <div class="inputDiv">
+          <label for="timer">Display Timer:</label><input type="checkbox" id="displayTimer" name="displayTimer">
+        </div>
+        
+        <div class="cardRange inputDiv" >
+          <label for="cardsPlayingLabel">Cards Playing:</label><span id="cardsNo">8</span><br>
+          <input id="cardRange" type="range" min="8" max="32" value="8" step="4">
+        </div>
+        <div class="settingsButton">
+          <button class="shortButton" id="startPlay">Start</button>
+          <button class="shortButton" id="skip">Skip</button>
+        </div>
+      </div>
+    </section>
+    <section class="gameArea" class="fullscreen">
       <header> 
-
         <div class="headerButtons headerDiv">
           <!-- stop watch feature  -->
-
           <p>Duration: </p><div class="stopwatch">00:00:00</div>
-          
           <!-- end of stop watch feature  -->
 
           <i class="icon-cw"></i>
@@ -47,12 +60,12 @@
                  
       </div>
       <div class="winner"></div>
-    </div>
+    </section>
     
     
   </main>
   <footer>
-    <div class="message"></div>
+    <h5>&copy; 2015 JC Lee. A General Assembly Project.</h5>
   </footer>
   <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
   <script src="http://underscorejs.org/underscore.js"></script>

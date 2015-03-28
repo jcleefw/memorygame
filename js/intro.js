@@ -1,11 +1,11 @@
 var intro = {
   init: function () {
-    $introDiv = $('<div>').addClass('fullscreen').attr('id', 'intro');
-    //$introSpan = $('<i>').addClass("icon-play").attr('id', 'startPlay');
-    $singlePlayerButton = $('<button>').attr('id', 'singlePlayer').text('Single Player');
-    $doublePlayerButton = $('<button>').attr('id', 'doublePlayer').text('Double Player');
-    $('main.container').prepend($introDiv);
-    $('#intro').append($singlePlayerButton).append($doublePlayerButton);
+    // $introDiv = $('<div>').addClass('fullscreen').attr('id', 'intro');
+    // //$introSpan = $('<i>').addClass("icon-play").attr('id', 'startPlay');
+    // $singlePlayerButton = $('<button>').attr('id', 'singlePlayer').text('Single Player');
+    // $doublePlayerButton = $('<button>').attr('id', 'doublePlayer').text('Double Player');
+    // $('main.container').prepend($introDiv);
+    // $('#intro').append($singlePlayerButton).append($doublePlayerButton);
 
     this.createEventListener();
   },
@@ -44,7 +44,11 @@ var settings = {
     
     $container = $('<p>').addClass('playerContainer').append($label).append($input);
     $playerNameDiv = $('<div>').addClass('playerName').append($container);
-    $('#userCustomization').prepend($playerNameDiv);
+    if ($("div.playerName").length > 0){
+      $playerNameDiv.insertAfter($("div.playerName"));
+    } else {
+      $('.userSettings').prepend($playerNameDiv);
+    }
   },
   createEventListener: function() {
     $('#userCustomization').on('click', 'button', function() {
@@ -62,9 +66,8 @@ var settings = {
       console.log(playerName.length);  
       (playerName.length>1) ? game.setUpDisplay('double') : game.setUpDisplay('single');
       
-      $(this).parent().fadeOut(1000, function() {
+      $(this).closest('section').fadeOut(1000, function() {
         $('.gameArea').fadeIn(600);
-        $(this).remove();
       });
     });
 
