@@ -1534,4 +1534,3 @@
     });
   }
 }.call(this));
-185 min to Spreed

@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease;
 }
 *,*:before, *:after {
   box-sizing: border-box;
@@ -41,7 +42,35 @@ button {
     @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 2px 10px);
   }
 }
-
+/* Checkboxes */
+input[type="checkbox"]{
+  height:25px;
+  width: 25px;
+  &:before, &:after {
+    position: relative;
+    display: block;
+    content: "";
+    width: 25px;
+    height: 25px;
+  }
+  &:before {
+    background: #FFF;
+    border-radius: 5px;
+    @include box-shadow (rgba(0, 0, 0, .3) 0px 2px 3px 0px inset, rgba(255, 255, 255, .8) 0px 1px 0px 0px);
+  }
+  &:after {
+    top: -25px;
+    text-align:center;
+  }
+  &:checked:after{
+    content: "\2713"; 
+    font-size: 1.5em;
+    @include text-shadow(rgba(black, .2) 1px 1px 1px);
+  }
+}
+span {
+    display: block;
+}
 /* Clearfix */
 
 .clearFix:after {
@@ -115,16 +144,21 @@ button {
     }
   }
 }
-.inputDiv{
-  label{
-    margin: 0 $normal-padding $normal-padding 0 ;
-    width: 35%;
-    display:inline-block;
-  }
-  input[type="range"] {
+.inputDiv label{
+  margin: 0 $normal-padding $normal-padding 0 ;
+  width: 40%;
+  display:inline-block;
+  padding: $small-padding 0;
+  position:relative;
+}
+
+.inputDiv input {
+  cursor: pointer;
+  &[type="range"] {
     width:100%;
   }
 }
+
 .settingsButton{
   position:absolute;
   bottom: $normal-padding;
@@ -139,19 +173,120 @@ button {
 .gameArea {
   header{
     position:relative;
-    padding: $normal-padding ;
-    height: 120px;
+    //padding: $normal-padding ;
+    height: 170px;
     @include background( radial-gradient(rgba(white, 0.5), rgba(black, 0.2)), image-url('wooden-board.png') );
+    @include box-shadow (rgba(0, 0, 0, .7) 0 0 20px 5px);
   }
 }
+.headerDiv {
+  background: rgba(white, .7);
+  border-top: dashed grey;
+  height: 50px;
+}
+.headerButtons{
+  width:58%;
+  display:inline-block;
+  text-align:right;
+  margin-top: $small-padding;
+}
+.stopwatch {
+  
+  font-size: 1.5em;
+  padding-top: $small-padding;
+  width: 40%;
+  text-align: center;
+  display:inline-block;
+}
+.playerScore {
+  height: 120px;
+  width: 100%;
+  article{
+    width: 30%;
+    float:left;
+    padding: $small-padding+5px 0;
+  }
+  em {
+    display:block;
+    font-size: 1.5em;
+  }
+  em, span {
+    text-align: center;
+  }
+  span {
+    font-size: 3em;
+  }
+}
+.empire {
+  background: url('../img/angry-bird-empire.png') no-repeat center, rgba(white, .7);
+  width: 36%;
+  height: 120px;
+  float:left;
+  background-size: 110/160*100%;
+  border: none;
+  position:relative;
+  
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 4%;
+    height: 120px;
+    background: rgba(white, .7);
+  }
+  &:before {
+    border-right: dashed grey;
+    left:2%;
+  }
+  &:after {
+    border-left: dashed grey;
+    right:2%;
+  }
+}
+
+/* CSS for icon set */
+i {
+  font-family:'fontello'; 
+  font-size: 1.5em;
+  margin: 0 5px;
+  border-radius:1em;
+  font-style:normal;
+  display: inline-block;
+  text-align: center;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  @include background-image(linear-gradient(to bottom, #ffe471 25%, #fdb500 100%));
+  @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 2px 2px);
+  &:hover {
+    top:3px;
+    position: relative;
+  }
+  &:active {
+    top:3px;
+    position: relative;
+     @include box-shadow(#ffd55b -10px -39px 0px -14px inset, rgba(#ffe471, 0.3) 0 0 2px 5px);
+  }
+}
+.icon-cw:before {
+  content: '\e801';
+}
+.icon-pause:before {
+  content: '\e802';
+}
+
+/* CSS for card Area */
+.cardArea {
+  margin: $big-padding 0;
+}
+
 /* CSS for cards */
 .card {
   cursor: pointer;
   border: 1px dashed #aaa;
   width: 21%;
-  height: 140px;
+  height: 2.5em;
   text-align:center;
-  font-size: 3em;
+  font-size: 2.5em;
   line-height: 2.5em;
   padding: 10px;
   display: inline-block;
@@ -193,3 +328,7 @@ button {
 .back{
   @include transform (rotatex(-180deg));
 }
+
+
+
+

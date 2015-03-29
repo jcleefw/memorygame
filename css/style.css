@@ -16,14 +16,15 @@
 * {
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease;
 }
 
-/* line 9, sass/style.scss */
+/* line 10, sass/style.scss */
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
-/* line 13, sass/style.scss */
+/* line 14, sass/style.scss */
 body {
   font-size: 16px;
   background: #EDFFFF;
@@ -31,12 +32,12 @@ body {
   letter-spacing: 1px;
 }
 
-/* line 19, sass/style.scss */
+/* line 20, sass/style.scss */
 ul {
   list-style: none;
 }
 
-/* line 23, sass/style.scss */
+/* line 24, sass/style.scss */
 button {
   border: none;
   color: white;
@@ -55,15 +56,15 @@ button {
   -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
 }
-/* line 33, sass/style.scss */
+/* line 34, sass/style.scss */
 button:active, button:focus {
   outline: none;
 }
-/* line 36, sass/style.scss */
+/* line 37, sass/style.scss */
 button:hover {
   opacity: 0.8;
 }
-/* line 39, sass/style.scss */
+/* line 40, sass/style.scss */
 button:active {
   color: rgba(0, 0, 0, 0.5);
   -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
@@ -71,8 +72,47 @@ button:active {
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 10px;
 }
 
+/* Checkboxes */
+/* line 46, sass/style.scss */
+input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
+/* line 49, sass/style.scss */
+input[type="checkbox"]:before, input[type="checkbox"]:after {
+  position: relative;
+  display: block;
+  content: "";
+  width: 25px;
+  height: 25px;
+}
+/* line 56, sass/style.scss */
+input[type="checkbox"]:before {
+  background: #FFF;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px 0px inset, rgba(255, 255, 255, 0.8) 0px 1px 0px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px 0px inset, rgba(255, 255, 255, 0.8) 0px 1px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px 0px inset, rgba(255, 255, 255, 0.8) 0px 1px 0px 0px;
+}
+/* line 61, sass/style.scss */
+input[type="checkbox"]:after {
+  top: -25px;
+  text-align: center;
+}
+/* line 65, sass/style.scss */
+input[type="checkbox"]:checked:after {
+  content: "\2713";
+  font-size: 1.5em;
+  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
+}
+
+/* line 71, sass/style.scss */
+span {
+  display: block;
+}
+
 /* Clearfix */
-/* line 47, sass/style.scss */
+/* line 76, sass/style.scss */
 .clearFix:after {
   content: "";
   display: table;
@@ -80,7 +120,7 @@ button:active {
 }
 
 /* General styling */
-/* line 54, sass/style.scss */
+/* line 83, sass/style.scss */
 .container {
   width: 100%;
   margin: 0 auto;
@@ -88,32 +128,32 @@ button:active {
   position: relative;
 }
 
-/* line 60, sass/style.scss */
+/* line 89, sass/style.scss */
 .fullscreen {
   height: 550px;
   position: relative;
 }
 
-/* line 65, sass/style.scss */
+/* line 94, sass/style.scss */
 .spreadButton {
   width: inherit;
   margin: 3px 0;
 }
 
-/* line 70, sass/style.scss */
+/* line 99, sass/style.scss */
 .shortButton {
   padding: 10px 50px;
 }
 
 /* CSS for intro page */
-/* line 75, sass/style.scss */
+/* line 104, sass/style.scss */
 .introBg {
   background: url("../img/intro-bg.jpg") no-repeat center;
   background-size: 120%;
   height: 80%;
 }
 
-/* line 81, sass/style.scss */
+/* line 110, sass/style.scss */
 .introButton {
   position: absolute;
   bottom: 20px;
@@ -121,14 +161,14 @@ button:active {
 }
 
 /* CSS for settings page */
-/* line 89, sass/style.scss */
+/* line 118, sass/style.scss */
 #userCustomization {
   padding: 20px;
   background: url("../img/settings-bg.jpg") no-repeat center;
   background-size: cover;
 }
 
-/* line 94, sass/style.scss */
+/* line 123, sass/style.scss */
 .userSettings {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
@@ -137,16 +177,16 @@ button:active {
   position: relative;
 }
 
-/* line 101, sass/style.scss */
+/* line 130, sass/style.scss */
 .playerName {
   margin: 20px 0;
 }
-/* line 103, sass/style.scss */
+/* line 132, sass/style.scss */
 .playerName label {
   margin: 0 5px 5px 0;
   display: block;
 }
-/* line 107, sass/style.scss */
+/* line 136, sass/style.scss */
 .playerName input {
   padding: 10px;
   border-radius: 5px;
@@ -154,56 +194,196 @@ button:active {
   border: none;
   display: block;
 }
-/* line 113, sass/style.scss */
+/* line 142, sass/style.scss */
 .playerName input:focus, .playerName input:active {
   outline: none;
 }
 
-/* line 119, sass/style.scss */
+/* line 147, sass/style.scss */
 .inputDiv label {
   margin: 0 20px 20px 0;
-  width: 35%;
+  width: 40%;
   display: inline-block;
+  padding: 5px 0;
+  position: relative;
 }
-/* line 124, sass/style.scss */
+
+/* line 155, sass/style.scss */
+.inputDiv input {
+  cursor: pointer;
+}
+/* line 157, sass/style.scss */
 .inputDiv input[type="range"] {
   width: 100%;
 }
 
-/* line 128, sass/style.scss */
+/* line 162, sass/style.scss */
 .settingsButton {
   position: absolute;
   bottom: 20px;
 }
 
 /* CSS for Game Area */
-/* line 134, sass/style.scss */
+/* line 168, sass/style.scss */
 .gameArea {
   background: url("../img/gamedeck-bg.jpg") no-repeat;
   min-height: inherit;
   position: relative;
 }
 
-/* line 140, sass/style.scss */
+/* line 174, sass/style.scss */
 .gameArea header {
   position: relative;
-  padding: 20px;
-  height: 120px;
+  height: 170px;
   background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4yIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('../img/wooden-board.png');
   background: -moz-radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url('../img/wooden-board.png');
   background: -webkit-radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url('../img/wooden-board.png');
   background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url('../img/wooden-board.png');
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 0 20px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 0 20px 5px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 0 20px 5px;
+}
+
+/* line 182, sass/style.scss */
+.headerDiv {
+  background: rgba(255, 255, 255, 0.7);
+  border-top: dashed grey;
+  height: 50px;
+}
+
+/* line 187, sass/style.scss */
+.headerButtons {
+  width: 58%;
+  display: inline-block;
+  text-align: right;
+  margin-top: 5px;
+}
+
+/* line 193, sass/style.scss */
+.stopwatch {
+  font-size: 1.5em;
+  padding-top: 5px;
+  width: 40%;
+  text-align: center;
+  display: inline-block;
+}
+
+/* line 201, sass/style.scss */
+.playerScore {
+  height: 120px;
+  width: 100%;
+}
+/* line 204, sass/style.scss */
+.playerScore article {
+  width: 30%;
+  float: left;
+  padding: 10px 0;
+}
+/* line 209, sass/style.scss */
+.playerScore em {
+  display: block;
+  font-size: 1.5em;
+}
+/* line 213, sass/style.scss */
+.playerScore em, .playerScore span {
+  text-align: center;
+}
+/* line 216, sass/style.scss */
+.playerScore span {
+  font-size: 3em;
+}
+
+/* line 220, sass/style.scss */
+.empire {
+  background: url("../img/angry-bird-empire.png") no-repeat center, rgba(255, 255, 255, 0.7);
+  width: 36%;
+  height: 120px;
+  float: left;
+  background-size: 68.75%;
+  border: none;
+  position: relative;
+}
+/* line 229, sass/style.scss */
+.empire:before, .empire:after {
+  content: "";
+  position: absolute;
+  width: 4%;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.7);
+}
+/* line 236, sass/style.scss */
+.empire:before {
+  border-right: dashed grey;
+  left: 2%;
+}
+/* line 240, sass/style.scss */
+.empire:after {
+  border-left: dashed grey;
+  right: 2%;
+}
+
+/* CSS for icon set */
+/* line 247, sass/style.scss */
+i {
+  font-family: 'fontello';
+  font-size: 1.5em;
+  margin: 0 5px;
+  border-radius: 1em;
+  font-style: normal;
+  display: inline-block;
+  text-align: center;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiNmZmU0NzEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGI1MDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(25%, #ffe471), color-stop(100%, #fdb500));
+  background-image: -moz-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: -webkit-linear-gradient(top, #ffe471 25%, #fdb500 100%);
+  background-image: linear-gradient(to bottom, #ffe471 25%, #fdb500 100%);
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
+}
+/* line 260, sass/style.scss */
+i:hover {
+  top: 3px;
+  position: relative;
+}
+/* line 264, sass/style.scss */
+i:active {
+  top: 3px;
+  position: relative;
+  -moz-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 5px;
+  -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 5px;
+  box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 5px;
+}
+
+/* line 270, sass/style.scss */
+.icon-cw:before {
+  content: '\e801';
+}
+
+/* line 273, sass/style.scss */
+.icon-pause:before {
+  content: '\e802';
+}
+
+/* CSS for card Area */
+/* line 278, sass/style.scss */
+.cardArea {
+  margin: 50px 0;
 }
 
 /* CSS for cards */
-/* line 148, sass/style.scss */
+/* line 283, sass/style.scss */
 .card {
   cursor: pointer;
   border: 1px dashed #aaa;
   width: 21%;
-  height: 140px;
+  height: 2.5em;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   line-height: 2.5em;
   padding: 10px;
   display: inline-block;
@@ -219,12 +399,12 @@ button:active {
   transition-duration: 0.5s;
 }
 
-/* line 165, sass/style.scss */
+/* line 300, sass/style.scss */
 .card.flipped {
   -webkit-transform: rotatex(-180deg);
 }
 
-/* line 169, sass/style.scss */
+/* line 304, sass/style.scss */
 .face {
   width: 100%;
   height: 100%;
@@ -235,7 +415,7 @@ button:active {
   z-index: 2;
 }
 
-/* line 177, sass/style.scss */
+/* line 312, sass/style.scss */
 .back, .front {
   position: absolute;
   top: 0;
@@ -246,14 +426,14 @@ button:active {
   border-radius: 10px;
 }
 
-/* line 187, sass/style.scss */
+/* line 322, sass/style.scss */
 .front {
   z-index: 1;
   background: url("../img/card-bg.jpg") no-repeat center;
   background-size: 100%;
 }
 
-/* line 193, sass/style.scss */
+/* line 328, sass/style.scss */
 .back {
   -moz-transform: rotatex(-180deg);
   -ms-transform: rotatex(-180deg);

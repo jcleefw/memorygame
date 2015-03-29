@@ -32,8 +32,8 @@ var player = {
     settings.init(numPlayer);
   },
   assignPlayerName: function(array, btn) {
-    //console.log(array);
-    //console.log(btn);
+    console.log("assignPlayername playerName array = " + array);
+    console.log("assignPlayerName buttonClick = " + btn);
     if(btn==="startPlay") {
       _.times(array.length, function (index) {
         //console.log(array[index]);

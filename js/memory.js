@@ -57,7 +57,7 @@ var game = {
   },
   setHeaderDisplay: function(type) {
     if(type === 'single') {
-
+      console.log("set up single player header");
       var playerName = player.player1.name;
 
       $spanName = $('<span>').addClass('playerTurn').text(playerName);
@@ -66,9 +66,10 @@ var game = {
       $('.playerInfo').append($message).append($score);
       $('.playerScore').empty();
     } else if (type === 'double') {
-      $spanTurn = $('<span>').attr('id', 'playerTurn');
-      $divTurn = $('<div>').addClass('turn').append($spanTurn).append($('<em>').text(' turn'));
-      $('.playerInfo').prepend($divTurn);
+      console.log("set up double player header");
+      //$spanTurn = $('<span>').attr('id', 'playerTurn');
+      //$divTurn = $('<div>').addClass('turn').append($spanTurn).append($('<em>').text(' turn'));
+      //$('.playerInfo').prepend($divTurn);
       
       $('#ply2Name').text(player.player2.name);
     }
@@ -228,4 +229,5 @@ $( document ).ready(function() {
       console.log("Pause was hit.");
       Stopwatch.stop();
     });
+    
 });

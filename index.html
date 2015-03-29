@@ -20,14 +20,17 @@
     <section id="userCustomization" class="fullscreen">
       <div class="userSettings">
         <div class="inputDiv">
-          <label for="difficulty">Difficulty:</label><span id="difficulty">Normal</span
+          <label for="difficulty">Difficulty:</label>
+          <span id="difficulty">Normal</span>
         </div>
         <div class="inputDiv">
-          <label for="timer">Display Timer:</label><input type="checkbox" id="displayTimer" name="displayTimer">
+          <label for="timer">Display Timer:</label>
+          <input type="checkbox" id="displayTimer" name="displayTimer" checked="checked">
         </div>
         
         <div class="cardRange inputDiv" >
-          <label for="cardsPlayingLabel">Cards Playing:</label><span id="cardsNo">8</span><br>
+          <label for="cardsPlayingLabel">Cards Playing:</label>
+          <span id="cardsNo">8</span><br>
           <input id="cardRange" type="range" min="8" max="32" value="8" step="4">
         </div>
         <div class="settingsButton">
@@ -38,26 +41,36 @@
     </section>
     <section class="gameArea" class="fullscreen">
       <header> 
-        <div class="headerButtons headerDiv">
-          <!-- stop watch feature  -->
-          <p>Duration: </p><div class="stopwatch">00:00:00</div>
-          <!-- end of stop watch feature  -->
-
-          <i class="icon-cw"></i>
-          <i class="icon-pause"></i>
-          <!-- <span class="icon-spinner11"></span>
-          <span class="icon-pause2"></span> -->
-        </div>
-        <div class="playerInfo headerDiv">
-          <!-- <div class="turn">Player <span id="playerTurn"></span> turn</div> -->
+        
+        <div class="playerInfo ">
           <div class="playerScore">
-            <p><em id="ply1Name"></em>: <span id="player1">0 </span></p>
-            <p><em id="ply2Name"></em>: <span id="player2">0</span></p>
-          </div> 
+            <article class="player">
+              <em id="ply1Name"></em>
+              <span id="player1">0 </span>
+            </article>
+            <div class="empire">
+            </div>
+            <article class="player">
+              <em id="ply2Name"></em>
+              <span id="player2">0 </span>
+            </article>
+          </div> <!-- only for 2 players --> 
+        </div>  
+        <div class="headerDiv">
+          <!-- stop watch feature  -->
+          <div class="stopwatch">00:00:00</div> 
+          <!-- end of stop watch feature  -->
+          <div class="headerButtons">
+            <i class="icon-cw"></i>
+            <i class="icon-pause"></i>
+          </div>
         </div>
+        
+        
+        
       </header>
       <div class="cardArea">
-                 
+              
       </div>
       <div class="winner"></div>
     </section>
@@ -67,8 +80,10 @@
   <footer>
     <h5>&copy; 2015 JC Lee. A General Assembly Project.</h5>
   </footer>
-  <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-  <script src="http://underscorejs.org/underscore.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.11.2.js"></script> -->
+  <!-- <script src="http://underscorejs.org/underscore.js"></script> -->
+  <script src="js/jquery.js"></script>
+  <script src="js/underscore.js"></script>
   <script src="js/intro.js"></script>
   <script src="js/player.js"></script>
   <script src="js/memory.js"></script>
