@@ -4,21 +4,26 @@ var player = {
   displayWinner: function() {
     if(game.gameType !== 'single') {
       if(player.player1.score > player.player2.score) {
-        winner = "Congratulations, " + this.player1.name + " wins" ;
+        winner = this.player1.name + " wins" ;
+        congrat = "Congratulations!!";
         this.player1.totalRoundWin++;
       } else if (player.player2.score > player.player1.score) {
-        winner = "Congratulations, " + this.player2.name + " wins" ;
+        winner = this.player2.name + " wins" ;
+        congrat = "Congratulations!!";
         this.player2.totalRoundWin++;
       }else {
-        winner = "Oh! Oh! Draw. No one wins";
+        winner = "Draw. No one wins";
+        congrat = "Oh! Oh!";
       }
     } else {
-      winner = "Congratulations. You've finish the game";
+      congrat = "Congratulations!!";
+      winner = "You've finish the game";
     }
-    
+
 
     $('div.cardArea').hide();
-    $('div.winner').prepend($('<p class="message">').text(winner)).show();
+    $('div.winner em').append(congrat);
+    $('div.winner span').append(winner);
     Stopwatch.stop();
   },
   createPlayer: function(numPlayer) {
@@ -44,7 +49,7 @@ var player = {
         } else {
           player.setDefaultPlayerName((index+1));
         }
-        
+
       });
     } else {
       player.setDefaultPlayerName(1);

@@ -15,7 +15,7 @@ var intro = {
         player.createPlayer(1);
         $(this).remove();
       });
-      
+
       //game.setUpDisplay('single');
     });
     $('#doublePlayer').on('click', function() {
@@ -35,14 +35,14 @@ var settings = {
     _.times(num, function(index) {
       settings.createPlayerNameDiv((index+1));
     });
-    
+
     this.createEventListener();
   },
   createPlayerNameDiv: function (index) {
     $label = $('<label>').attr('for', 'ply'+index).text('Player '+index+' Name: ');
     $input = $('<input>').attr({type: 'text', id: 'ply'+index});
-    
-    
+
+
     $container = $('<p>').addClass('playerContainer').append($label).append($input);
     $playerNameDiv = $('<div>').addClass('playerName').append($container);
     if ($("div.playerName").length > 0){
@@ -66,20 +66,21 @@ var settings = {
           playerName.push(name.val());
       });
       player.assignPlayerName(playerName, buttonClick);
-      console.log("Settings Create Event Listener, PlayerName.length = " + playerName.length);  
+      console.log("Settings Create Event Listener, PlayerName.length = " + playerName.length);
       (playerName.length>1) ? game.setUpDisplay('double') : game.setUpDisplay('single');
-      
+
       $(this).closest('section').fadeOut(1000, function() {
         $('.gameArea').fadeIn(600);
       });
     });
 
-    // $("#cardRange").change(function () {         
-    //   console.log("Card Range is changing");
-    //   var newValue = $('#cardRange').val();
-    //   console.log("newValue =" + newValue);
-    //   $("#cardsNo").text(newValue);
-    // });
+    $("#cardRange").change(function () {
+      console.log("Card Range is changing");
+      var newValue = $('#cardRange').val();
+      console.log("newValue =" + newValue);
+      $("#cardsNo").text(newValue);
+      game.pairs = newValue/2;
+    });
   },
-  
+
 }

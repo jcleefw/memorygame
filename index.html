@@ -15,7 +15,7 @@
         <button class="spreadButton" id="singlePlayer">Single Player</button>
         <button class="spreadButton" id="doublePlayer">Double Player</button>
       </div>
-      
+
     </section>
     <section id="userCustomization" class="fullscreen">
       <div class="userSettings">
@@ -27,7 +27,7 @@
           <label for="timer">Display Timer:</label>
           <input type="checkbox" id="displayTimer" name="displayTimer" checked="checked">
         </div>
-        
+
         <div class="cardRange inputDiv" >
           <label for="cardsPlayingLabel">Cards Playing:</label>
           <span id="cardsNo">8</span><br>
@@ -39,9 +39,9 @@
         </div>
       </div>
     </section>
-    <section class="gameArea" class="fullscreen">
-      <header> 
-        
+    <section class="gameArea fullscreen" >
+      <header>
+
         <div class="playerInfo ">
           <div class="playerScore">
             <article class="player">
@@ -54,28 +54,30 @@
               <em id="ply2Name"></em>
               <span id="player2">0 </span>
             </article>
-          </div> <!-- only for 2 players --> 
-        </div>  
+          </div> <!-- only for 2 players -->
+        </div>
         <div class="headerDiv">
           <!-- stop watch feature  -->
-          <div class="stopwatch">00:00:00</div> 
+          <div class="stopwatch">00:00:00</div>
           <!-- end of stop watch feature  -->
           <div class="headerButtons">
             <i class="icon-cw"></i>
             <i class="icon-pause"></i>
           </div>
         </div>
-        
-        
-        
+
+
+
       </header>
       <div class="cardArea">
-              
+
       </div>
-      <div class="winner"></div>
+      <div class="winner">
+        <p class="message"><em></em><span></span></p>
+      </div>
     </section>
-    
-    
+
+
   </main>
   <footer>
     <h5>&copy; 2015 JC Lee. A General Assembly Project.</h5>

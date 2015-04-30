@@ -63,13 +63,17 @@ input[type="checkbox"]{
     text-align:center;
   }
   &:checked:after{
-    content: "\2713"; 
+    content: "\2713";
     font-size: 1.5em;
     @include text-shadow(rgba(black, .2) 1px 1px 1px);
   }
 }
-span {
-    display: block;
+footer {
+  width: 100%;
+  text-align: center;
+  background: #222;
+  color: #bbb;
+  padding: 20px;
 }
 /* Clearfix */
 
@@ -166,14 +170,13 @@ span {
 
 /* CSS for Game Area */
 .gameArea {
-  background: url('../img/gamedeck-bg.jpg') no-repeat;
+  background: url('../img/gamedeck-bg.jpg') repeat-y;
   min-height:inherit;
   position:relative;
-}
-.gameArea {
+  height: auto;
+
   header{
     position:relative;
-    //padding: $normal-padding ;
     height: 170px;
     @include background( radial-gradient(rgba(white, 0.5), rgba(black, 0.2)), image-url('wooden-board.png') );
     @include box-shadow (rgba(0, 0, 0, .7) 0 0 20px 5px);
@@ -191,7 +194,7 @@ span {
   margin-top: $small-padding;
 }
 .stopwatch {
-  
+
   font-size: 1.5em;
   padding-top: $small-padding;
   width: 40%;
@@ -215,6 +218,7 @@ span {
   }
   span {
     font-size: 3em;
+    display: block;
   }
 }
 .empire {
@@ -225,7 +229,7 @@ span {
   background-size: 110/160*100%;
   border: none;
   position:relative;
-  
+
   &:before, &:after {
     content: "";
     position: absolute;
@@ -245,7 +249,7 @@ span {
 
 /* CSS for icon set */
 i {
-  font-family:'fontello'; 
+  font-family:'fontello';
   font-size: 1.5em;
   margin: 0 5px;
   border-radius:1em;
@@ -327,6 +331,27 @@ i {
 
 .back{
   @include transform (rotatex(-180deg));
+}
+
+/* CSS for winners message */
+.winner {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  padding: 20px;
+  .message {
+    @include text-shadow(rgba(black, 0.5) 1px 1px 5px);
+    position:absolute;
+    top: 50%;
+    width: 100%;
+  }
+  em, span {
+    display: block;
+  }
+  em{
+    color: #980C46;
+    font-size: 1.3em;
+  }
 }
 
 

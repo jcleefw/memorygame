@@ -9,14 +9,16 @@ var game = {
     this.pairsFound = 0;
     this.playerTurn = 0;
   },
-  
+
   setUpGameArray: function() {
     // select the number of symbols needed for the game
     var newArray = tempArray.slice(0, this.pairs);
+
     //duplicate the array so that the value are a pair
     newArray = newArray.concat(newArray);
-    // shuffle the array 3 times
+    // shuffle the array
     newArray = _.shuffle(newArray);
+
     return newArray;
   },
   // Setup the screen with the card deck
@@ -24,14 +26,15 @@ var game = {
     console.log("setUpDisplay")
     game.config();
     var gameArray = this.setUpGameArray();
-
+    console.log("gameArray" + gameArray);
     var length = gameArray.length;
-    
+
     var counter=0;
     $('.cardArea').append('<ul>');
 
     // loop through the number of cards for the game and add element to html
     _.times((game.pairs*2), function(index) {
+      console.log("inside _.times setup game.pairs");
       var $frontDiv = $('<div>').addClass('face front');
       var $backDiv = $('<div>').addClass('face back').text(gameArray[counter]);
       var listItem = $('<li>').addClass('card').append($frontDiv).append($backDiv);
@@ -52,8 +55,8 @@ var game = {
     if(!this.gameType) {
       this.gameType = numOfPlayers;
     }
-    
-    
+
+
   },
   setHeaderDisplay: function(type) {
     if(type === 'single') {
@@ -70,17 +73,17 @@ var game = {
       //$spanTurn = $('<span>').attr('id', 'playerTurn');
       //$divTurn = $('<div>').addClass('turn').append($spanTurn).append($('<em>').text(' turn'));
       //$('.playerInfo').prepend($divTurn);
-      
+
       $('#ply2Name').text(player.player2.name);
     }
     $('#ply1Name').text(player.player1.name);
   },
   storeClickValue: function(value, index) {
-    
-    // add the value of the element clicked into array 
+
+    // add the value of the element clicked into array
     this.clickValue.push(value);
 
-    // add the index of the element clicked into array 
+    // add the index of the element clicked into array
     this.clickIndex.push(index);
 
     // if click value array has 2 value
@@ -89,10 +92,10 @@ var game = {
       var same = this.compareStoreValue();
 
       // if not the same, hide flip and hide the cards
-      if(!same) { 
-        this.hideCards(); 
-      
-      // else update player score  
+      if(!same) {
+        this.hideCards();
+
+      // else update player score
       } else {
         if(this.gameType !== 'single') {
           this.updatePlayerScore(false, this.playerTurn);
@@ -100,7 +103,7 @@ var game = {
 
           this.updatePlayerScore(false, this.playerTurn);
         }
-        
+
         this.offCardEvent();
       }
 
@@ -111,8 +114,8 @@ var game = {
     } else {
       return false;
     }
-    
-    
+
+
   },
   offCardEvent: function() {
     console.log(game.clickIndex);
@@ -131,7 +134,7 @@ var game = {
     return (length===1) ? true : false;
   },
   hideCards: function() {
-    var indexToChange = this.clickIndex; 
+    var indexToChange = this.clickIndex;
 
     _.times(indexToChange.length, function(index) {
       $( 'ul li:nth-child('+(indexToChange[index]+1)+')' ).removeClass('flipped');
@@ -139,11 +142,11 @@ var game = {
     if(this.gameType !== 'single') {
       $('#playerTurn').text(this.changePlayer());
     }
-    
-    
+
+
   },
   changePlayer:function() {
-    
+
     if(this.playerTurn) {
       this.playerTurn = 0;
       return player.player1.name
@@ -151,7 +154,7 @@ var game = {
       this.playerTurn = 1;
       return player.player2.name
     }
-    
+
   },
   updatePlayerScore: function(reset, playerTurn ) {
     console.log(player.player1.score);
@@ -163,9 +166,9 @@ var game = {
         player.player2.score = 0;
         $('#player2').text(player.player2.score);
       }
-      
-      
-      
+
+
+
     } else {
       //console.log('this is not reset');
       if(!playerTurn) {
@@ -180,7 +183,7 @@ var game = {
       this.pairsFound += 1;
       this.checkWin();
     }
-    
+
   },
   checkWin: function () {
     console.log("pairsFound=" + this.pairsFound);
@@ -204,7 +207,7 @@ var game = {
         game.storeClickValue(elem.html(), liIndex)
       },600);
     });
-    
+
   },
   restartGame: function() {
     //this.playerTurn = 0;
@@ -229,5 +232,5 @@ $( document ).ready(function() {
       console.log("Pause was hit.");
       Stopwatch.stop();
     });
-    
+
 });

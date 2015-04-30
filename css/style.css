@@ -107,12 +107,16 @@ input[type="checkbox"]:checked:after {
 }
 
 /* line 71, sass/style.scss */
-span {
-  display: block;
+footer {
+  width: 100%;
+  text-align: center;
+  background: #222;
+  color: #bbb;
+  padding: 20px;
 }
 
 /* Clearfix */
-/* line 76, sass/style.scss */
+/* line 80, sass/style.scss */
 .clearFix:after {
   content: "";
   display: table;
@@ -120,7 +124,7 @@ span {
 }
 
 /* General styling */
-/* line 83, sass/style.scss */
+/* line 87, sass/style.scss */
 .container {
   width: 100%;
   margin: 0 auto;
@@ -128,32 +132,32 @@ span {
   position: relative;
 }
 
-/* line 89, sass/style.scss */
+/* line 93, sass/style.scss */
 .fullscreen {
   height: 550px;
   position: relative;
 }
 
-/* line 94, sass/style.scss */
+/* line 98, sass/style.scss */
 .spreadButton {
   width: inherit;
   margin: 3px 0;
 }
 
-/* line 99, sass/style.scss */
+/* line 103, sass/style.scss */
 .shortButton {
   padding: 10px 50px;
 }
 
 /* CSS for intro page */
-/* line 104, sass/style.scss */
+/* line 108, sass/style.scss */
 .introBg {
   background: url("../img/intro-bg.jpg") no-repeat center;
   background-size: 120%;
   height: 80%;
 }
 
-/* line 110, sass/style.scss */
+/* line 114, sass/style.scss */
 .introButton {
   position: absolute;
   bottom: 20px;
@@ -161,14 +165,14 @@ span {
 }
 
 /* CSS for settings page */
-/* line 118, sass/style.scss */
+/* line 122, sass/style.scss */
 #userCustomization {
   padding: 20px;
   background: url("../img/settings-bg.jpg") no-repeat center;
   background-size: cover;
 }
 
-/* line 123, sass/style.scss */
+/* line 127, sass/style.scss */
 .userSettings {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
@@ -177,16 +181,16 @@ span {
   position: relative;
 }
 
-/* line 130, sass/style.scss */
+/* line 134, sass/style.scss */
 .playerName {
   margin: 20px 0;
 }
-/* line 132, sass/style.scss */
+/* line 136, sass/style.scss */
 .playerName label {
   margin: 0 5px 5px 0;
   display: block;
 }
-/* line 136, sass/style.scss */
+/* line 140, sass/style.scss */
 .playerName input {
   padding: 10px;
   border-radius: 5px;
@@ -194,12 +198,12 @@ span {
   border: none;
   display: block;
 }
-/* line 142, sass/style.scss */
+/* line 146, sass/style.scss */
 .playerName input:focus, .playerName input:active {
   outline: none;
 }
 
-/* line 147, sass/style.scss */
+/* line 151, sass/style.scss */
 .inputDiv label {
   margin: 0 20px 20px 0;
   width: 40%;
@@ -208,30 +212,30 @@ span {
   position: relative;
 }
 
-/* line 155, sass/style.scss */
+/* line 159, sass/style.scss */
 .inputDiv input {
   cursor: pointer;
 }
-/* line 157, sass/style.scss */
+/* line 161, sass/style.scss */
 .inputDiv input[type="range"] {
   width: 100%;
 }
 
-/* line 162, sass/style.scss */
+/* line 166, sass/style.scss */
 .settingsButton {
   position: absolute;
   bottom: 20px;
 }
 
 /* CSS for Game Area */
-/* line 168, sass/style.scss */
+/* line 172, sass/style.scss */
 .gameArea {
-  background: url("../img/gamedeck-bg.jpg") no-repeat;
+  background: url("../img/gamedeck-bg.jpg") repeat-y;
   min-height: inherit;
   position: relative;
+  height: auto;
 }
-
-/* line 174, sass/style.scss */
+/* line 178, sass/style.scss */
 .gameArea header {
   position: relative;
   height: 170px;
@@ -244,14 +248,14 @@ span {
   box-shadow: rgba(0, 0, 0, 0.7) 0 0 20px 5px;
 }
 
-/* line 182, sass/style.scss */
+/* line 185, sass/style.scss */
 .headerDiv {
   background: rgba(255, 255, 255, 0.7);
   border-top: dashed grey;
   height: 50px;
 }
 
-/* line 187, sass/style.scss */
+/* line 190, sass/style.scss */
 .headerButtons {
   width: 58%;
   display: inline-block;
@@ -259,7 +263,7 @@ span {
   margin-top: 5px;
 }
 
-/* line 193, sass/style.scss */
+/* line 196, sass/style.scss */
 .stopwatch {
   font-size: 1.5em;
   padding-top: 5px;
@@ -268,32 +272,33 @@ span {
   display: inline-block;
 }
 
-/* line 201, sass/style.scss */
+/* line 204, sass/style.scss */
 .playerScore {
   height: 120px;
   width: 100%;
 }
-/* line 204, sass/style.scss */
+/* line 207, sass/style.scss */
 .playerScore article {
   width: 30%;
   float: left;
   padding: 10px 0;
 }
-/* line 209, sass/style.scss */
+/* line 212, sass/style.scss */
 .playerScore em {
   display: block;
   font-size: 1.5em;
 }
-/* line 213, sass/style.scss */
+/* line 216, sass/style.scss */
 .playerScore em, .playerScore span {
   text-align: center;
 }
-/* line 216, sass/style.scss */
+/* line 219, sass/style.scss */
 .playerScore span {
   font-size: 3em;
+  display: block;
 }
 
-/* line 220, sass/style.scss */
+/* line 224, sass/style.scss */
 .empire {
   background: url("../img/angry-bird-empire.png") no-repeat center, rgba(255, 255, 255, 0.7);
   width: 36%;
@@ -303,7 +308,7 @@ span {
   border: none;
   position: relative;
 }
-/* line 229, sass/style.scss */
+/* line 233, sass/style.scss */
 .empire:before, .empire:after {
   content: "";
   position: absolute;
@@ -311,19 +316,19 @@ span {
   height: 120px;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 236, sass/style.scss */
+/* line 240, sass/style.scss */
 .empire:before {
   border-right: dashed grey;
   left: 2%;
 }
-/* line 240, sass/style.scss */
+/* line 244, sass/style.scss */
 .empire:after {
   border-left: dashed grey;
   right: 2%;
 }
 
 /* CSS for icon set */
-/* line 247, sass/style.scss */
+/* line 251, sass/style.scss */
 i {
   font-family: 'fontello';
   font-size: 1.5em;
@@ -345,12 +350,12 @@ i {
   -webkit-box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 2px;
 }
-/* line 260, sass/style.scss */
+/* line 264, sass/style.scss */
 i:hover {
   top: 3px;
   position: relative;
 }
-/* line 264, sass/style.scss */
+/* line 268, sass/style.scss */
 i:active {
   top: 3px;
   position: relative;
@@ -359,24 +364,24 @@ i:active {
   box-shadow: #ffd55b -10px -39px 0px -14px inset, rgba(255, 228, 113, 0.3) 0 0 2px 5px;
 }
 
-/* line 270, sass/style.scss */
+/* line 274, sass/style.scss */
 .icon-cw:before {
   content: '\e801';
 }
 
-/* line 273, sass/style.scss */
+/* line 277, sass/style.scss */
 .icon-pause:before {
   content: '\e802';
 }
 
 /* CSS for card Area */
-/* line 278, sass/style.scss */
+/* line 282, sass/style.scss */
 .cardArea {
   margin: 50px 0;
 }
 
 /* CSS for cards */
-/* line 283, sass/style.scss */
+/* line 287, sass/style.scss */
 .card {
   cursor: pointer;
   border: 1px dashed #aaa;
@@ -399,12 +404,12 @@ i:active {
   transition-duration: 0.5s;
 }
 
-/* line 300, sass/style.scss */
+/* line 304, sass/style.scss */
 .card.flipped {
   -webkit-transform: rotatex(-180deg);
 }
 
-/* line 304, sass/style.scss */
+/* line 308, sass/style.scss */
 .face {
   width: 100%;
   height: 100%;
@@ -415,7 +420,7 @@ i:active {
   z-index: 2;
 }
 
-/* line 312, sass/style.scss */
+/* line 316, sass/style.scss */
 .back, .front {
   position: absolute;
   top: 0;
@@ -426,17 +431,42 @@ i:active {
   border-radius: 10px;
 }
 
-/* line 322, sass/style.scss */
+/* line 326, sass/style.scss */
 .front {
   z-index: 1;
   background: url("../img/card-bg.jpg") no-repeat center;
   background-size: 100%;
 }
 
-/* line 328, sass/style.scss */
+/* line 332, sass/style.scss */
 .back {
   -moz-transform: rotatex(-180deg);
   -ms-transform: rotatex(-180deg);
   -webkit-transform: rotatex(-180deg);
   transform: rotatex(-180deg);
+}
+
+/* CSS for winners message */
+/* line 337, sass/style.scss */
+.winner {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  padding: 20px;
+}
+/* line 342, sass/style.scss */
+.winner .message {
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+/* line 348, sass/style.scss */
+.winner em, .winner span {
+  display: block;
+}
+/* line 351, sass/style.scss */
+.winner em {
+  color: #980C46;
+  font-size: 1.3em;
 }
