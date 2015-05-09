@@ -3,7 +3,7 @@ var tempArray = ["@","$","%","&","*","#","+","="];
 
 var game = {
   config: function() {
-    this.pairs = 4; // 4 x 2 = 8 cards
+    //this.pairs = 4; // 4 x 2 = 8 cards
     this.clickValue = [];
     this.clickIndex = [];
     this.pairsFound = 0;
@@ -11,8 +11,26 @@ var game = {
   },
 
   setUpGameArray: function() {
+
+    if(this.pairs === undefined) {
+      this.pairs = 4;
+    }
     // select the number of symbols needed for the game
-    var newArray = tempArray.slice(0, this.pairs);
+    if(this.pairs > tempArray.length) {
+      var repeat = Math.floor(this.pairs / tempArray.length);
+      var leftover = this.pairs % tempArray.length
+      var repeatArray = [];
+      var leftover_array = tempArray.slice(0, leftover);
+
+      _.times(repeat, function() {
+        repeatArray = tempArray.slice(0, tempArray.length).concat(repeatArray);
+      });
+      //debugger;
+      newArray = repeatArray.concat(leftover_array);
+    } else {
+      var newArray = tempArray.slice(0, this.pairs);
+    }
+
 
     //duplicate the array so that the value are a pair
     newArray = newArray.concat(newArray);
@@ -79,7 +97,7 @@ var game = {
     $('#ply1Name').text(player.player1.name);
   },
   storeClickValue: function(value, index) {
-
+    console.log("storeClickValue");
     // add the value of the element clicked into array
     this.clickValue.push(value);
 
@@ -118,13 +136,14 @@ var game = {
 
   },
   offCardEvent: function() {
-    console.log(game.clickIndex);
-    console.log("length =" +game.clickIndex.length);
-    _.times(game.clickIndex.length, function(index) {
-      var clickIndex = game.clickIndex[index]+1;
-      console.log(clickIndex);
-      $('ul li.card:nth-child('+clickIndex+')').off('click');
-    });
+    console.log('offCardEvent');
+    // console.log(game.clickIndex);
+    // console.log("length =" +game.clickIndex.length);
+    // _.times(game.clickIndex.length, function(index) {
+    //   var clickIndex = game.clickIndex[index]+1;
+    //   console.log(clickIndex);
+    //   $('ul li.card:nth-child('+clickIndex+')').off('click');
+    // });
   },
   compareStoreValue: function() {
 
@@ -167,8 +186,6 @@ var game = {
         $('#player2').text(player.player2.score);
       }
 
-
-
     } else {
       //console.log('this is not reset');
       if(!playerTurn) {
@@ -186,24 +203,31 @@ var game = {
 
   },
   checkWin: function () {
+    console.log('checkWin');
     console.log("pairsFound=" + this.pairsFound);
+    console.log("thisPairs=" + this.pairs);
     var winner;
     if(this.pairsFound===this.pairs) {
       player.displayWinner();
+      $('.winner').show();
       return true;
     } else {
       return false;
     }
   },
   setUpEventListener: function() {
+
     $('.card').on('click', function() {
-      Stopwatch.init();
+      console.log("card is clicking");
+      //Stopwatch.init();
       //console.log($(this).parent().index());
       var liIndex = $(this).index();
       var elem = $(this);
       $(this).addClass('flipped');
+      $(this).off('click');
       _.delay(function() {
         //console.log(elem);
+
         game.storeClickValue(elem.html(), liIndex)
       },600);
     });
@@ -213,24 +237,10 @@ var game = {
     //this.playerTurn = 0;
     game.updatePlayerScore(true);
     game.setUpDisplay();
-    $('.winner').hide().empty();
+    $('.winner').hide();
     //game.pairsFound = 0;
     game.config();
     $('.stopwatch').text('00:00:00');
   }
 }
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-    intro.init();
-    $('.icon-cw').on('click', function() {
-      console.log("Restart was hit.");
-      $('.cardArea').fadeOut().empty().delay(700).fadeIn();;
-      game.restartGame();
-    });
-    $('.icon-pause').on('click', function() {
-      console.log("Pause was hit.");
-      Stopwatch.stop();
-    });
-
-});

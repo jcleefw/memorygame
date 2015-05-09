@@ -2,6 +2,8 @@ var player = {
   //player1: { name: '', score: 0, totalRoundWin: 0 },
   //player2: { name: '', score: 0, totalRoundWin: 0 },
   displayWinner: function() {
+    console.log("displayWinner");
+
     if(game.gameType !== 'single') {
       if(player.player1.score > player.player2.score) {
         winner = this.player1.name + " wins" ;
@@ -22,8 +24,8 @@ var player = {
 
 
     $('div.cardArea').hide();
-    $('div.winner em').append(congrat);
-    $('div.winner span').append(winner);
+    $('div.winner em').text(congrat);
+    $('div.winner span').text(winner);
     Stopwatch.stop();
   },
   createPlayer: function(numPlayer) {
