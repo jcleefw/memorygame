@@ -60,7 +60,7 @@ var game = {
       $('ul').append(listItem);
       counter++;
     });
-    this.setUpEventListener();
+    this.setUpEventListener($('.card'));
     this.setHeaderDisplay(numOfPlayers);
     // Display which player's turn
     if(numOfPlayers==='double') {
@@ -97,7 +97,7 @@ var game = {
     $('#ply1Name').text(player.player1.name);
   },
   storeClickValue: function(value, index) {
-    console.log("storeClickValue");
+
     // add the value of the element clicked into array
     this.clickValue.push(value);
 
@@ -122,7 +122,7 @@ var game = {
           this.updatePlayerScore(false, this.playerTurn);
         }
 
-        this.offCardEvent();
+        this.toggleCardEvent();
       }
 
       // then clear both value and index array
@@ -135,15 +135,18 @@ var game = {
 
 
   },
-  offCardEvent: function() {
-    console.log('offCardEvent');
-    // console.log(game.clickIndex);
-    // console.log("length =" +game.clickIndex.length);
-    // _.times(game.clickIndex.length, function(index) {
-    //   var clickIndex = game.clickIndex[index]+1;
-    //   console.log(clickIndex);
-    //   $('ul li.card:nth-child('+clickIndex+')').off('click');
-    // });
+  toggleCardEvent: function() {
+    console.log(game.clickIndex);
+    console.log("length =" +game.clickIndex.length);
+    _.times(game.clickIndex.length, function(index) {
+      var clickIndex = game.clickIndex[index];
+      console.log(clickIndex);
+      //$('ul li.card:nth-child('+clickIndex+')').off('click');
+      game.offCardEvent(clickIndex);
+    });
+  },
+  offCardEvent: function(cardIndex) {
+    $('.card:nth-child('+(cardIndex+1)+')').off('click');
   },
   compareStoreValue: function() {
 
@@ -156,13 +159,13 @@ var game = {
     var indexToChange = this.clickIndex;
 
     _.times(indexToChange.length, function(index) {
+      console.log($( 'ul li:nth-child('+(indexToChange[index]+1)+')' ));
+        game.setUpEventListener($( 'ul li:nth-child('+(indexToChange[index]+1)+')' ));
       $( 'ul li:nth-child('+(indexToChange[index]+1)+')' ).removeClass('flipped');
     });
     if(this.gameType !== 'single') {
       $('#playerTurn').text(this.changePlayer());
     }
-
-
   },
   changePlayer:function() {
 
@@ -215,19 +218,19 @@ var game = {
       return false;
     }
   },
-  setUpEventListener: function() {
-
-    $('.card').on('click', function() {
-      console.log("card is clicking");
-      //Stopwatch.init();
+  setUpEventListener: function(elem) {
+    console.log("setUpEventListener");
+    elem.on('click', function() {
+      console.log("setUpEventListener click");
+      // Stopwatch.init();
       //console.log($(this).parent().index());
+      console.log($(this));
       var liIndex = $(this).index();
       var elem = $(this);
       $(this).addClass('flipped');
-      $(this).off('click');
       _.delay(function() {
         //console.log(elem);
-
+        game.offCardEvent(liIndex);
         game.storeClickValue(elem.html(), liIndex)
       },600);
     });
@@ -236,11 +239,14 @@ var game = {
   restartGame: function() {
     //this.playerTurn = 0;
     game.updatePlayerScore(true);
+    // Stopwatch.stop();
+    // Stopwatch.clear();
     game.setUpDisplay();
     $('.winner').hide();
     //game.pairsFound = 0;
     game.config();
-    $('.stopwatch').text('00:00:00');
+
+    //$('.stopwatch').text('00:00:00');
   }
 }
 
