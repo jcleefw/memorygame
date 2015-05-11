@@ -1,0 +1,18 @@
+/* Font face */
+@font-face {
+    font-family: 'Angry Bird';
+    src: local('Angry Bird'), url('fonts/angrybirds-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'fontello';
+  src: local('Fonttello'), url('fonts/fontello.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables */
+$big-padding: 50px;
+$normal-padding: 20px;
+$small-padding: 5px;

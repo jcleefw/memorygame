@@ -1,29 +1,22 @@
 var intro = {
-  init: function () {
-    $introDiv = $('<div>').addClass('fullscreen').attr('id', 'intro');
-    //$introSpan = $('<i>').addClass("icon-play").attr('id', 'startPlay');
-    $singlePlayerButton = $('<button>').addClass('spreadButton').attr('id', 'singlePlayer').text('Single Player');
-    $doublePlayerButton = $('<button>').addClass('spreadButton').attr('id', 'doublePlayer').text('Double Player');
-    $('main.container').prepend($introDiv);
-    $('#intro').append($singlePlayerButton).append($doublePlayerButton);
 
+  init: function () {
     this.createEventListener();
   },
+
+  //create event listener
   createEventListener: function() {
-    $('#singlePlayer').on('click', function() {
-      $('#intro').fadeOut(1000, function() {
+
+    $('#intro').on('click', 'button', function() {
+      if($(this).attr('id') === "singlePlayer") {
         player.createPlayer(1);
-        $(this).remove();
-      });
-      
-      //game.setUpDisplay('single');
-    });
-    $('#doublePlayer').on('click', function() {
-      $('#intro').fadeOut(1000, function() {
+      } else if ($(this).attr('id') === "doublePlayer"){
         player.createPlayer(2);
+      }
+      $(this).closest('section').fadeOut(500, function() {
         $(this).remove();
       });
-      //game.setUpDisplay('double');
+
     });
   }
 }
@@ -34,14 +27,14 @@ var settings = {
     _.times(num, function(index) {
       settings.createPlayerNameDiv((index+1));
     });
-    
+
     this.createEventListener();
   },
   createPlayerNameDiv: function (index) {
     $label = $('<label>').attr('for', 'ply'+index).text('Player '+index+' Name: ');
     $input = $('<input>').attr({type: 'text', id: 'ply'+index});
-    
-    
+
+
     $container = $('<p>').addClass('playerContainer').append($label).append($input);
     $playerNameDiv = $('<div>').addClass('playerName').append($container);
     if ($("div.playerName").length > 0){
@@ -63,16 +56,16 @@ var settings = {
           playerName.push(name.val());
       });
       player.assignPlayerName(playerName, buttonClick);
-      console.log(playerName.length);  
+      console.log(playerName.length);
       (playerName.length>1) ? game.setUpDisplay('double') : game.setUpDisplay('single');
-      
+
       $(this).parent().fadeOut(1000, function() {
         $('.gameArea').fadeIn(600);
         $(this).remove();
       });
     });
 
-    // $("#cardRange").change(function () {         
+    // $("#cardRange").change(function () {
     //   console.log("Card Range is changing");
     //   var newValue = $('#cardRange').val();
     //   console.log("newValue =" + newValue);
@@ -80,3 +73,4 @@ var settings = {
     // });
   }
 }
+
