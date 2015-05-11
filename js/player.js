@@ -26,7 +26,7 @@ var player = {
     $('div.cardArea').hide();
     $('div.winner em').text(congrat);
     $('div.winner span').text(winner);
-    Stopwatch.stop();
+    //Stopwatch.stop();
   },
   createPlayer: function(numPlayer) {
     console.log("Create " + numPlayer + " player(s)");

@@ -81,11 +81,16 @@ var game = {
       console.log("set up single player header");
       var playerName = player.player1.name;
 
-      $spanName = $('<span>').addClass('playerTurn').text(playerName);
-      $message = $('<div>').addClass('turn').text('Welcome, ').append($spanName);
+      // $spanName = $('<span>').addClass('playerTurn').text(playerName);
+      //$message = $('<div>').addClass('turn').text('Welcome, ').append($spanName);
+      $message = $('<div>').addClass('turn').text('Welcome, ');
       $score = $('<p>').append($('<em>').text('Pairs Found: ')).append($('<spans id="player1">').text(player.player1.score));
-      $('.playerInfo').append($message).append($score);
-      $('.playerScore').empty();
+      //$('.playerScore article').first().prepend($message);
+
+      $('.playerScore article').last().hide();
+      $('.playerScore .empire').css('float', 'right');
+
+      //$('.playerScore').empty();
     } else if (type === 'double') {
       console.log("set up double player header");
       //$spanTurn = $('<span>').attr('id', 'playerTurn');
