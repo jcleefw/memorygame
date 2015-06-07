@@ -99,23 +99,48 @@ footer {
 .spreadButton {
   width: inherit;
   margin: 3px 0;
+
+  @media screen and (min-width: $break-large) {
+    width: 100%;
+    padding: 20px;
+  }
 }
 
 .shortButton {
-  padding: ($normal-padding - 10px) $big-padding;
+  //padding: ($normal-padding - 10px) $big-padding;
+  width: 100%;
 }
 
 /* CSS for intro page */
 .introBg {
   background: url('../img/intro-bg.jpg') no-repeat center;
-  background-size: 120%;
   height: 80%;
+  width: 100%;
+  //display: flex;
+  @media screen and (max-width: $break-medium) {
+    background-size: 120%;
+    position: relative;
+    left: 2%;
+  }
 }
 
 .introButton {
-  position: absolute;
+
   bottom:20px;
   width: 100%;
+
+  @media screen and (max-width: $break-medium) {
+    position: absolute;
+  }
+
+  @media screen and (min-width: $break-medium-large) {
+    display: flex;
+    bottom: 30px;
+  }
+
+  @media screen and (min-width: $break-large) {
+    padding: 0 20%;
+  }
 }
 
 
@@ -124,6 +149,9 @@ footer {
   padding: $normal-padding;
   background: url('../img/settings-bg.jpg') center;
   background-size: cover;
+  @media screen and (min-width: $break-medium-large) {
+    padding: 20px 20%;
+  }
 }
 .userSettings{
   background: rgba(255,255,255, 0.7);
@@ -165,8 +193,11 @@ footer {
 }
 
 .settingsButton{
-  position:absolute;
-  bottom: $normal-padding;
+  //position:absolute;
+  //bottom: $normal-padding;
+  top:100px;
+  display:flex;
+  position: relative;
 }
 
 /* CSS for Game Area */
@@ -209,6 +240,10 @@ footer {
     width: 30%;
     float:left;
     padding: $small-padding+5px 0;
+
+    @media screen and (min-width: $break-medium-large) {
+      padding: 3% 0;
+    }
   }
   em {
     display:block;
@@ -221,6 +256,10 @@ footer {
     font-size: 3em;
     display: block;
   }
+
+  @media screen and (min-width: $break-medium-large) {
+    height: 150px;
+  }
 }
 .empire {
   background: url('../img/angry-bird-empire.png') no-repeat center, rgba(white, .7);
@@ -231,12 +270,25 @@ footer {
   border: none;
   position:relative;
 
+  @media screen and (min-width: $break-medium-large) {
+    height: 150px;
+    background-size: 30%;
+    margin-right: 3%;
+  }
+
+  @media screen and (min-width: $break-large) {
+    background-size: 30% 95%;
+  }
+
   &:before, &:after {
     content: "";
     position: absolute;
     width: 4%;
     height: 120px;
     background: rgba(white, .7);
+    @media screen and (min-width: $break-medium-large) {
+      height: 150px;
+    }
   }
   &:before {
     border-right: dashed grey;
@@ -300,6 +352,12 @@ i {
   border-radius: 10px;
   @include transform-style( preserve-3d );
   @include transition-duration(0.5s);
+
+  @media screen and (min-width: $break-medium-large) {
+    height: 130px;
+    font-size: 3.5em;
+    line-height: 2.3em;
+  }
 }
 
 .card.flipped {
@@ -328,6 +386,9 @@ i {
   z-index: 1;
   background: url('../img/card-bg.jpg') no-repeat center;
   background-size: 100%;
+  @media screen and (min-width: $break-medium-large) {
+    background-size: 65% 85%;
+  }
 }
 
 .back{
