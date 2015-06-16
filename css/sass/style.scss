@@ -205,10 +205,10 @@ footer {
 
 /* CSS for Game Area */
 .gameArea {
-  background: url('../img/gamedeck-bg.jpg') repeat-y;
+  background: url('../img/gamedeck-bg.jpg');
   min-height:inherit;
   position:relative;
-  // height: 100%;
+  background-size: 100%;
 
   header{
     position:relative;
