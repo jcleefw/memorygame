@@ -113,7 +113,6 @@ footer {
   background: #222;
   color: #bbb;
   padding: 20px;
-  position: fixed;
   bottom: 0;
 }
 
@@ -205,7 +204,6 @@ footer {
   padding: 20px;
   background: url("../img/settings-bg.jpg") center;
   background-size: cover;
-  overflow: hidden;
 }
 @media screen and (min-width: 900px) {
   /* line 150, sass/style.scss */
@@ -451,7 +449,7 @@ i:active {
 /* CSS for card Area */
 /* line 338, sass/style.scss */
 .cardArea {
-  margin: 50px 0;
+  padding: 50px 0;
 }
 
 /* CSS for cards */

@@ -74,6 +74,9 @@ var game = {
       this.gameType = numOfPlayers;
     }
 
+    if(game.pairs*2>16) {
+      $('.fullscreen').css('height','auto');
+    }
 
   },
   setHeaderDisplay: function(type) {

@@ -75,7 +75,7 @@ footer {
   background: #222;
   color: #bbb;
   padding: 20px;
-  position: fixed;
+  //position: fixed;
   bottom: 0;
 }
 /* Clearfix */
@@ -151,7 +151,7 @@ footer {
   padding: $normal-padding;
   background: url('../img/settings-bg.jpg') center;
   background-size: cover;
-  overflow: hidden;
+  //overflow: hidden;
   @media screen and (min-width: $break-medium-large) {
     padding: 20px 20%;
   }
@@ -336,7 +336,7 @@ i {
 
 /* CSS for card Area */
 .cardArea {
-  margin: $big-padding 0;
+  padding: $big-padding 0;
 }
 
 /* CSS for cards */
